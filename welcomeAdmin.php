@@ -24,7 +24,6 @@ if (!isset($_SESSION['usernameA'])) {
     
     
     <a href="utilities.php">เพิ่มข้อมูลสาธาณูปะโภค</a>
-    <a href="welcomeadd.php">เพิ่มข้อมูลของผู้พักอาศัย</a>
     <a href="welcomestock.php">อัพเดทพัสดุ</a> 
     <a href="logout.php">Logout</a>
 </html>

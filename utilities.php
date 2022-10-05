@@ -4,6 +4,7 @@ include 'config.php';
 
 $sql = "SELECT * FROM  add_util ";
 $query = mysqli_query($conn,$sql);
+$order = 1;
 
 ?>
 <!DOCTYPE html>
@@ -11,27 +12,64 @@ $query = mysqli_query($conn,$sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Homepage Admin</title>
     
-    <style>
-        
-        body{
-            background: hsl(170, 33%, 79%);
-            display: flex;
-            align-items: center;
-            justify-items: center;
-            margin: auto;
-            flex-direction: column;
-        }
-    </style>
+    
 </head>
 <body>
     <h1>Welcome Add utilities</h1>
    
+    <h1 class="text-center mt-3">ข้อมูลสาธาณูปโภคของแต่ละห้อง</h1>
+    <form action="" class="form-group my-3" method="POST">
+      <div class="row">
+        <div class="col-6">
+          <input type="text" placeholder="กรอกชื่อหรือนามสกุลที่ต้องการค้นหา" class="form-control" name="UsernameU" required>
+        </div>
+        <div class="col-6">
+          <input type="submit" value="Search" class="btn btn-info">
+        </div>
+      </div>
+
+    </form>
+   
+    <table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <td>No.</td>
+            <td>Firstname</td>
+            <td>Lastname</td>
+            <td>Picture</td>
+            <td>Total Cost</td>
+           
+        </tr>
+    </thead>
+    </table>
+    <tbody>
+
+<?php while ($row = mysqli_fetch_assoc($query)){?>
+
+    <tr>
+            <td><?php echo $order++;?></td>
+            <td><?php echo $row["usernameU"]; ?></td>
+            <td><?php echo $row["lastnameU"]; ?></td>
+            <td><?php echo $row["picU"]; ?></td>
+            <td><?php echo $row["cost"]; ?></td>
+            <td><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
+     </tr>
+    <br>
+<?php } ?>
+   
+</tbody>
+    </table>
+    <br>
+    <a href="utilitiesformadd.php" class="btn btn-success">เพิ่มข้อมูล</a>
     
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <a href="welcomeAdmin.php">Back</a>
     
-    <a href="utilitiesformadd.php">Add Utillitie</a>
-    <a href="welcomeAdmin.php">Back</a> 
+   
     
 
 </html>
