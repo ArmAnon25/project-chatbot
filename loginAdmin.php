@@ -6,28 +6,26 @@ session_start();
 
 error_reporting(0);
 
-if (isset($_SESSION['username'])) {
-    header("Location: welcomeUser.php");
+if (isset($_SESSION['usernameA'])) {
+    header("Location: welcomeAdmin.php");
 
 }
-if (isset($_POST['submit'])) {
-	$username = $_POST['username'];
-    $password_user = md5($_POST['pass']);
-    
-// การเช็คจากฐานข้อมูลจาก Database 
+if (isset($_POST['submitA'])) {
+	$usernameA = $_POST['usernameA'];
+	$passwordA = md5($_POST['passA']);
 
-	$sql = "SELECT * FROM user WHERE username = '$username' and pass = '$password_user'" ;
+    // การเช็คจากฐานข้อมูลจาก Database
+	$sql = "SELECT * FROM admins WHERE usernameA = '$usernameA' and passA = '$passwordA'";
 	$result = mysqli_query($conn, $sql);
 	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result); 
-		$_SESSION['username'] = $row['username'];
-        $_SESSION["pass"] = $row["pass"];
-        $_SESSION["firstname"] = $row["firstname"];
-        $_SESSION["lastname"] = $row["lastname"];
-        $_SESSION["email"] = $row["email"];
-        $_SESSION["phone"] = $row["phone"];
-        $_SESSION["room"] = $row["room"];
-		header("Location: welcomeUser.php");
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['usernameA'] = $row['usernameA'];
+        $_SESSION["passA"] = $row["passA"];
+        $_SESSION["firstnameA"] = $row["firstnameA"];
+        $_SESSION["lastnameA"] = $row["lastnameA"];
+        $_SESSION["emailA"] = $row["emailA"];
+        $_SESSION["phoneA"] = $row["phoneA"];
+		header("Location: welcomeAdmin.php");
 	} else {
 		echo "<script>alert('Woops! username or Password is Wrong.')</script>";
 	}
@@ -40,14 +38,14 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home_log_reg.css">
-    <title>Login User</title>
-    
+    <title>Login Admin</title>
+
 	<style>
         *{
             padding: 0;
@@ -92,9 +90,8 @@ if (isset($_POST['submit'])) {
     </style>
 </head>
 <body>
-
 <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
           <a class="navbar-brand" href="homepage.php"><span class="text-info">KP</span>Resident</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,8 +121,8 @@ if (isset($_POST['submit'])) {
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Login user</a></li>
-                    <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
+                    <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
+                    <li><a class="dropdown-item" href="#">Login Admin</a></li>
                 </ul>
               </li>
             </ul>
@@ -134,7 +131,7 @@ if (isset($_POST['submit'])) {
       </nav>
 
 <section class="Form my-4 mx-0">
-	<div class="container-form">
+    <div class="container-form">
 		<div class="row">
 		    <div class="col-lg-4">
                 <img src="./project-1-img/293359828_378793381028763_5359799684334169419_n.jpg" class="image img-fluid float-ms"  alt="" >
@@ -142,38 +139,35 @@ if (isset($_POST['submit'])) {
 
 			<div class="col-lg-6 lg-2 px-5 pt-5">
 		        <form action="" method="POST" class="login-email_user">
-                    <h1 class="font-weight-bold py-2" style="font-weight: 600;">KP RESIDENT</h1>
-					<p class="login-text" style="font-size: 2rem; font-weight: 400;">Login to your account User </p>
-                    
-					<div class="form-row">
+                    <h1 class="font-weight-bold py-2" style="font-weight: 600;">KP Resident</h1>
+					<p class="login-text" style="font-size: 2rem; font-weight: 400;">Login to your account Admin </p>
+					
+                    <div class="form-row">
 						<div class="col-lg-7">
-					<input class = "form-control my-4 p-2" type="username" placeholder="username" 
-                    name="username" value="<?php echo $username; ?>" required>
+					<input class = "form-control my-4 p-2" type="username" placeholder="username" name="usernameA" value="<?php echo $usernameA; ?>" required>
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="col-lg-7">
-							<input  class = "form-control my-4 p-2" type="password" placeholder="password" 
-                     name="pass" value="<?php echo $_POST['pass']; ?>" required>
+							<input  class = "form-control my-4 p-2" type="password" placeholder="password"  name="passA" value="<?php echo $_POST['passA']; ?>" required>
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="col-lg-7">
-								<button class = "btn mt-2 mb-3" name="submit">Login</button>
+								<button class = "btn mt-2 mb-3" name="submitA">Login</button>
 						</div>
 					</div>
 
 			
-			        <p class="login-register-text">Don't have an account User? <a href="registerUser.php">Click Here</a>.</p>
-			        <p class="login-register-text">Back to Homepage<a href="homepage.php"> Homepage </a></p>
-		        </form>
-	        </div>
-	    </div>
+			<p class="login-register-text">Don't have an account Admin? <a href="registerAdmin.php" class="text-info">Click Here</a>.</p>
+			<p class="login-register-text">Back to Homepage<a href="homepage.php" class="text-info"> Homepage </a></p>
+		</form>
+	</div>
+	</div>
 	</div>	
 </section>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
