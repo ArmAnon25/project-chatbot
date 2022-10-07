@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="home_log_reg.css">
 </head>
 <body>
+    <df-messenger intent="WELCOME" chat-title="KP.RESIDENT" agent-id="a0540f60-3127-4bef-808a-3229b279865c" language-code="th"></df-messenger>
+    <style>
+      df-messenger {
+    --df-messenger-bot-message: #969db6;
+    --df-messenger-button-titlebar-color: hsl(195, 100%, 48%);
+    --df-messenger-chat-background-color: #fafafa;
+    --df-messenger-font-color: #fff;
+    --df-messenger-send-icon: hsl(195, 100%, 48%);
+    --df-messenger-user-message: #969db6;
+    }
+    </style>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#"><span class="text-info">KP</span>Resident</a>
@@ -340,13 +352,8 @@
         </div>
       </section>
 
-      <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="KP.RESIDENT"
-  agent-id="a0540f60-3127-4bef-808a-3229b279865c"
-  language-code="th"
-></df-messenger>
+    
+
       <!-- footer -->
       <footer class="bg-dark p-4 ">
         <div class="container">
@@ -360,6 +367,7 @@
         </div>
       </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>  
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </body>
 </html>
