@@ -51,9 +51,6 @@
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="#review">review</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li> -->
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
@@ -131,7 +128,7 @@
                   ที่สำคัญคือ เลี้ยงน้องหมา น้องแมวได้
                   <br>- ราคาเริ่มต้นเพียง 3,500 บาท
                   </p>
-                <a href="indexGreenDor.php" class="btn btn-info">Learn More</a>
+                <a href="indexGreen.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
           </div>
@@ -149,7 +146,7 @@
                   ตรงข้าม ม. เดินทางสะดวก<br> หน้าหอมี 7-11 ติดร้านเฝอลุงโฮ คีย์การ์ดเข้าออกทั้งภายนอกอาคารและในอาคาร
                   <br>- ราคาเริ่มต้นเพียง 4,000 บาท
                 </p>
-                <a href="indexOrangeDor.php" class="btn btn-info">Learn More</a>
+                <a href="indexOrange.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
           </div>
