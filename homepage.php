@@ -310,12 +310,7 @@
                   <h3 class="card-title py-2">Channat</h3>
                   <p class="card-text">เฟอร์นิเจอร์ครบครัน ที่จอดรถกว้าง<br>มีบริการห้องพักทั้งรายเดือนและรายวัน</p> 
                   
-                  <!-- <p class="socials">
-                    <i class="bi bi-twiter text-dark mx-1"></i>
-                    <i class="bi bi-facebook text-dark mx-1"></i>
-                    <i class="bi bi-linkedin text-dark mx-1"></i>
-                    <i class="bi bi-instagram text-dark mx-1"></i>
-                  </p> -->
+                  
                 </div>
               </div>
             </div>
@@ -359,7 +354,6 @@
       <footer class="bg-dark p-4 ">
         <div class="container">
           <dl class="row">
-            <!-- <p class="text-white text-center fw-nomal">KP RESIDENT DORMITORY</p>          -->
               <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 097-2844-555 / 087-999-38-39</dd>
               <dd class="bi bi-line text-white col-sm-6 text-start"> Line | bonusthai</dd>
               <dd class="bi bi-facebook text-white col-sm-6 text-start"> Facebook | KP Resident - ม.เกษตรฯ กําเเพงเเสน</dd>
