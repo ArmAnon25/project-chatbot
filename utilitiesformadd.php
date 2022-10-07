@@ -16,7 +16,7 @@
 
 
 			<div class="input-group">
-				<input type="text" placeholder="Username" name="usernameU" " required>
+				<input type="text" placeholder="Username" name="usernameU"  required>
 			</div>
             
 			<div class="input-group">
@@ -30,6 +30,11 @@
 
             <div class="input-group">
 				<input type="integer" placeholder="total cost" name="cost"  required><label> Bath </label>
+			</div>
+
+
+			<div class="input-group">
+				<input type="text" placeholder="room" name="rn"  required>
 			</div>
 		
 			<div class="input-group">

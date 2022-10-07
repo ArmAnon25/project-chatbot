@@ -27,6 +27,10 @@
 				<input type="tel" placeholder="Tel" name="pn"  required>
 			</div>
 
+			<div class="input-group">
+				<input type="text" placeholder="room" name="rm"  required>
+			</div>
+
 
 			<div class="input-group">
 				<label>วันที่ของมาถึง</label><br>

@@ -18,8 +18,8 @@ $order = 1;
     
 </head>
 <body>
-    <h1>Welcome Add utilities</h1>
-   
+  
+    <div class="container">
     <h1 class="text-center mt-3">ข้อมูลสาธาณูปโภคของแต่ละห้อง</h1>
     <form action="" class="form-group my-3" method="POST">
       <div class="row">
@@ -36,25 +36,30 @@ $order = 1;
     <table class="table table-bordered">
     <thead class="table-dark">
         <tr>
-            <td>No.</td>
+            <td>No</td>
+            <td>Room</td>
             <td>Firstname</td>
             <td>Lastname</td>
             <td>Picture</td>
             <td>Total Cost</td>
+            <td>Edit</td>
+            <td>Delete</td>
            
         </tr>
     </thead>
-    </table>
+    
     <tbody>
 
 <?php while ($row = mysqli_fetch_assoc($query)){?>
 
     <tr>
             <td><?php echo $order++;?></td>
+            <td><?php echo $row["rn"]; ?></td>
             <td><?php echo $row["usernameU"]; ?></td>
             <td><?php echo $row["lastnameU"]; ?></td>
             <td><?php echo $row["picU"]; ?></td>
             <td><?php echo $row["cost"]; ?></td>
+            <td><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-success" onclick="return confirm('ยืนยันการลบข้อมูล')">Edit</a></td>
             <td><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
      </tr>
     <br>
@@ -64,10 +69,11 @@ $order = 1;
     </table>
     <br>
     <a href="utilitiesformadd.php" class="btn btn-success">เพิ่มข้อมูล</a>
-    
+    <a href="welcomeAdmin.php">Back</a>
+    </div>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <a href="welcomeAdmin.php">Back</a>
+    
     
    
     
