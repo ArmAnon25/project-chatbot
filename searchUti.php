@@ -1,9 +1,11 @@
 <?php
 
 include 'config.php';
+$dataU = $_POST["dataU"];
 
-$sql = "SELECT * FROM  add_util ";
+$sql = "SELECT * FROM  add_util  WHERE UsernameU LIKE '%$dataU%' OR rn LIKE '%$dataU%' ORDER BY UsernameU ASC ";
 $query = mysqli_query($conn,$sql);
+$count = mysqli_num_rows($query);
 $order = 1;
 
 ?>
@@ -13,14 +15,14 @@ $order = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Homepage Admin</title>
+    <title>Search Utilities</title>
     
     
 </head>
 <body>
   
     <div class="container">
-    <h1 class="text-center mt-3">ข้อมูลสาธาณูปโภคของแต่ละห้อง</h1>
+    <h1 class="text-center mt-3">ข้อมูลสาธาณูปโภคที่ค้นหา</h1>
     <form action="searchUti.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
@@ -32,7 +34,7 @@ $order = 1;
       </div>
 
     </form>
-   
+    <?php if ($count > 0) { ?>
     <table class="table table-bordered">
     <thead class="table-dark">
         <tr>
@@ -67,9 +69,16 @@ $order = 1;
    
 </tbody>
     </table>
+    <?php } else {?>
+
+        <div class="alert alert-danger">
+        <b>ไม่พบข้อมูลการค้นหา!!</b>
+        </div>
+    <?php } ?>
+
     <br>
     <a href="utilitiesformadd.php" class="btn btn-success">เพิ่มข้อมูล</a>
-    <a href="welcomeAdmin.php">Back</a>
+    
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
