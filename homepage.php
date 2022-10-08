@@ -220,16 +220,6 @@
               </div>
             </div>
 
-            <!-- <div class="col-12 col-md-12 col-lg-4">
-              <div class="card text-white text-center bg-dark pb-2">
-                <div class="card-body">
-                  <i class="bi bi-slack"></i>
-                  <h3 class="card-title">Sustainability</h3>
-                  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro fuga impedit officia minus temporibus, velit cupiditate fugiat voluptatum itaque natus, error ex adipisci pariatur laudantium.</p>
-                  <button class="btn btn-info text-dark">Read More</button>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -242,7 +232,6 @@
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
                 <h2>NEIGHBORHOODS</h2>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Quibusdam, possimus.</p> -->
               </div>
             </div>
           </div>

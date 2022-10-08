@@ -16,7 +16,7 @@
 
 
 			<div class="input-group">
-				<input type="text" placeholder="Username" name="usernameS" " required>
+				<input type="text" placeholder="Username" name="usernameS" required>
 			</div>
             
 			<div class="input-group">
