@@ -57,7 +57,7 @@ $order = 1;
             <td><?php echo $row["rn"]; ?></td>
             <td><?php echo $row["usernameU"]; ?></td>
             <td><?php echo $row["lastnameU"]; ?></td>
-            <td><?php echo $row["picU"]; ?></td>
+            <td class= "text-center"> <img src = "img/<?php echo $row['picU'];?>" width="30%"> </td>
             <td><?php echo $row["cost"]; ?></td>
             <td><a href="editUti.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
             <td><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
