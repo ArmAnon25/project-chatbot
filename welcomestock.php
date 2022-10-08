@@ -215,15 +215,15 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)) {?>
 
         <tr>
-            <td><?php echo $order++;?></td>
-            <td><?php echo $row["rm"]; ?></td>
-            <td><?php echo $row["usernameS"]; ?></td>
-            <td><?php echo $row["lastnameS"]; ?></td>
-            <td><?php echo $row["pn"]; ?></td>
-            <td><?php echo $row["dates"]; ?></td>
-            <td><?php echo $row["pic"]; ?></td>
-            <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" onclick="return confirm('ยืนยันการแก้ไขข้อมูล')">Edit</a></td>
-            <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
+            <td class= "text-center"><?php echo $order++;?></td>
+            <td class= "text-center"><?php echo $row["rm"]; ?></td>
+            <td class= "text-center"><?php echo $row["usernameS"]; ?></td>
+            <td class= "text-center"><?php echo $row["lastnameS"]; ?></td>
+            <td class= "text-center"><?php echo $row["pn"]; ?></td>
+            <td class= "text-center"><?php echo $row["dates"]; ?></td>
+            <td class= "text-center"> <img src = "img/<?php echo $row['pic'];?>" width="30%"> </td>
+            <td class= "text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
+            <td class= "text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
           </tr>
         <?php } ?>
    
