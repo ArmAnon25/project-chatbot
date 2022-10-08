@@ -53,7 +53,7 @@ $row = mysqli_fetch_assoc($query);
 
             <div class="input-group">
 				<label>image Package Upload</label><br>
-				<input type="file"  name="pic" id="image"  value="<?php echo $row["pic"]; ?>">
+				<input type="file"  name="pic" id="image"  value=" <?php  echo $row["pic"]; ?>">
 			</div>
 
 		
