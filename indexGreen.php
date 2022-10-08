@@ -1,13 +1,3 @@
-<?php 
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: loginUser.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +16,7 @@ if (!isset($_SESSION['username'])) {
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#"><span class="text-info">KP</span>Resident</a>
+          <a class="navbar-brand" href="homepage.php"><span class="text-info">KP</span>Resident</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,9 +39,10 @@ if (!isset($_SESSION['username'])) {
                 <a class="nav-link fs-6 fw-normal" href="homepage.php#review">review</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
+                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item bi bi-box-arrow-right" href="logout.php">&ensp;Logout</a></li>
+                  <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
+                  <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
                 </ul>
               </li>
             </ul>

@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: loginUser.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,14 +47,10 @@
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="homepage.php#review">review</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li> -->
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
-                  <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
+                    <li><a class="dropdown-item bi bi-box-arrow-right" href="logout.php">&ensp;Logout</a></li>
                 </ul>
               </li>
             </ul>

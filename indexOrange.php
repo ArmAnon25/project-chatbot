@@ -1,19 +1,9 @@
-<?php 
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: loginUser.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Learn more GREEN</title>
+	<title>Learn more orange</title>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -26,7 +16,7 @@ if (!isset($_SESSION['username'])) {
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#"><span class="text-info">KP</span>Resident</a>
+          <a class="navbar-brand" href="homepage.php"><span class="text-info">KP</span>Resident</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,9 +39,10 @@ if (!isset($_SESSION['username'])) {
                 <a class="nav-link fs-6 fw-normal" href="homepage.php#review">review</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
+                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item bi bi-box-arrow-right" href="logout.php">&ensp;Logout</a></li>
+                  <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
+                  <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
                 </ul>
               </li>
             </ul>
@@ -65,14 +56,14 @@ if (!isset($_SESSION['username'])) {
 
 				<div class="col-md-12">
 					<div class="section-header text-center pb-3">
-					  <h2>GREEN DORMITORY</h2>
-					  <p class="lead">หอพักตึกเขียวอยู่ด้านหน้าทางเข้า สามารถเลี้ยงสัตว์ได้ ค่าห้องเริ่มต้นเพียง 3500.-</p>
+					  <h2>ORANGE DORMITORY</h2>
+					  <p class="lead">หอพักตึกใหม่สีส้มอยู่หลังตึกเขียว ห้องขนาดใหญ่ลมเย็น ค่าห้องเริ่มต้นเพียง 4000.-</p>
 					</div>
 				  </div>
 				<!-- row 1 -->
 				  <div class="col-lg-8 mb-4">
 					  <img
-						src="images/15626345_1333324120046413_4871243367876116954_o.jpg"
+						src="images/LINE_ALBUM_2092565 BE_๒๒๐๙๒๐_12.jpg"
 						alt="Gallery1"
 						class="gallery-item"
 					  />
@@ -82,7 +73,7 @@ if (!isset($_SESSION['username'])) {
 					<div class="col-lg-12 mb-4">
 					  
 						<img
-						  src="images//15272279_1333324283379730_2745427913997005460_o.jpg"
+						  src="images/152611973_4008020789243386_7251681270032337472_n.jpg"
 						  alt="Gallery2"
 						  class="gallery-item"
 						/>
@@ -91,7 +82,7 @@ if (!isset($_SESSION['username'])) {
 					<div class="col-lg-12 mb-4">
 					  
 						<img
-						  src="images/101558689_3283170755061730_8367626601861198800_n.jpg"
+						  src="images/151732951_4008021002576698_174614593323946981_n.jpg"
 						  alt="Gallery3"
 						  class="gallery-item"
 						/>
@@ -102,7 +93,7 @@ if (!isset($_SESSION['username'])) {
 				  <div class="col-lg-4 mb-4">
 					
 					  <img
-						src="images/101975999_3283170798395059_8630067051247161796_n.jpg"
+						src="images/152500694_4008527825859349_2472948877510664070_n.jpg"
 						alt="Gallery4"
 						class="gallery-item"
 					  />
@@ -111,7 +102,7 @@ if (!isset($_SESSION['username'])) {
 				  <div class="col-lg-4 mb-4">
 					
 					  <img
-						src="images/102871166_3283170741728398_9099807868434491130_n.jpg"
+						src="images/151973935_4008020855910046_4422379938064294058_n.jpg"
 						alt="Gallery5"
 						class="gallery-item"
 					  />
@@ -120,7 +111,7 @@ if (!isset($_SESSION['username'])) {
 				  <div class="col-lg-4 mb-4">
 					
 					  <img
-						src="images/15590863_1333324280046397_1995975827520976587_o.jpg"
+						src="images/150576194_4008020685910063_5548103148810448796_n.jpg"
 						alt="Gallery6"
 						class="gallery-item"
 					  />
@@ -128,7 +119,7 @@ if (!isset($_SESSION['username'])) {
 				  </div>
 
 				<!-- row 3 -->
-				<div class="col-lg-4 px-3">
+				<!-- <div class="col-lg-4 px-3">
 					<div class="col-lg-12 mb-4">
 					  
 						<img
@@ -156,7 +147,7 @@ if (!isset($_SESSION['username'])) {
 						class="gallery-item"
 					  />
 					</a>
-				  </div>
+				  </div> -->
 
 				<!-- <div class="col-lg-4 mb-3">
 					<img src="images/4.jpg" class="gallery-item" alt="Gallery4">
@@ -196,14 +187,13 @@ if (!isset($_SESSION['username'])) {
                         <dd class="col-sm-5 text-start">เครื่องทำน้ำอุ่น</dd>
                         <dd class="col-sm-7 text-start">กล้องวงจรปิด</dd>
                         <dd class="col-sm-5 text-start">เครื่องปรับอากาศ</dd>
-                        <dd class="col-sm-7 text-start">อินเทอร์เน็ตไร้สาย(รวม)</dd>
-                        <dd class="col-sm-5 text-start">เคเบิลทีวี / ดาวเทียม</dd>
-						<dd class="col-sm-7 text-start">อนุญาตให้เลี้ยงสัตว์</dd>
-                        <dd class="col-sm-5 text-start">ลิฟต์</dd>
-                        <dd class="col-sm-7 text-start">ที่จอดรถ</dd>
-                        <dd class="col-sm-5 text-start">ประตูเข้าคีย์การ์ด</dd>
-                        <dd class="col-sm-7 text-start">ตู้น้ำหยอดเหรียญ</dd>
-                        <dd class="col-sm-5 text-start">เครื่องซักผ้าหยอดเหรียญ</dd>
+                        <dd class="col-sm-7 text-start">อินเทอร์เน็ตไร้สาย(ในห้อง)</dd>
+                        <dd class="col-sm-5 text-start">เคเบิลทีวี / ดาวเทียม</dd>                       
+                        <dd class="col-sm-7 text-start">ลิฟต์</dd>
+                        <dd class="col-sm-5 text-start">ที่จอดรถ</dd>
+                        <dd class="col-sm-7 text-start">ประตูเข้าคีย์การ์ด</dd>
+                        <dd class="col-sm-5 text-start">ตู้น้ำหยอดเหรียญ</dd>
+                        <dd class="col-sm-7 text-start">เครื่องซักผ้าหยอดเหรียญ</dd>
                       </dl>
                     </div>
                 </div>
@@ -240,7 +230,6 @@ if (!isset($_SESSION['username'])) {
 	  </dl>
 	</div>
   </footer>
-	<!-- photo animation -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		document.addEventListener("click",function (e){

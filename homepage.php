@@ -55,9 +55,6 @@
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="#review">review</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li> -->
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
@@ -135,7 +132,7 @@
                   ที่สำคัญคือ เลี้ยงน้องหมา น้องแมวได้
                   <br>- ราคาเริ่มต้นเพียง 3,500 บาท
                   </p>
-                <a href="indexGreenDor.php" class="btn btn-info">Learn More</a>
+                <a href="indexGreen.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
           </div>
@@ -153,7 +150,7 @@
                   ตรงข้าม ม. เดินทางสะดวก<br> หน้าหอมี 7-11 ติดร้านเฝอลุงโฮ คีย์การ์ดเข้าออกทั้งภายนอกอาคารและในอาคาร
                   <br>- ราคาเริ่มต้นเพียง 4,000 บาท
                 </p>
-                <a href="indexOrangeDor.php" class="btn btn-info">Learn More</a>
+                <a href="indexOrange.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
           </div>
@@ -223,16 +220,6 @@
               </div>
             </div>
 
-            <!-- <div class="col-12 col-md-12 col-lg-4">
-              <div class="card text-white text-center bg-dark pb-2">
-                <div class="card-body">
-                  <i class="bi bi-slack"></i>
-                  <h3 class="card-title">Sustainability</h3>
-                  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro fuga impedit officia minus temporibus, velit cupiditate fugiat voluptatum itaque natus, error ex adipisci pariatur laudantium.</p>
-                  <button class="btn btn-info text-dark">Read More</button>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -245,7 +232,6 @@
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
                 <h2>NEIGHBORHOODS</h2>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Quibusdam, possimus.</p> -->
               </div>
             </div>
           </div>
@@ -313,12 +299,7 @@
                   <h3 class="card-title py-2">Channat</h3>
                   <p class="card-text">เฟอร์นิเจอร์ครบครัน ที่จอดรถกว้าง<br>มีบริการห้องพักทั้งรายเดือนและรายวัน</p> 
                   
-                  <!-- <p class="socials">
-                    <i class="bi bi-twiter text-dark mx-1"></i>
-                    <i class="bi bi-facebook text-dark mx-1"></i>
-                    <i class="bi bi-linkedin text-dark mx-1"></i>
-                    <i class="bi bi-instagram text-dark mx-1"></i>
-                  </p> -->
+                  
                 </div>
               </div>
             </div>
@@ -362,7 +343,6 @@
       <footer class="bg-dark p-4 ">
         <div class="container">
           <dl class="row">
-            <!-- <p class="text-white text-center fw-nomal">KP RESIDENT DORMITORY</p>          -->
               <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 097-2844-555 / 087-999-38-39</dd>
               <dd class="bi bi-line text-white col-sm-6 text-start"> Line | bonusthai</dd>
               <dd class="bi bi-facebook text-white col-sm-6 text-start"> Facebook | KP Resident - ม.เกษตรฯ กําเเพงเเสน</dd>

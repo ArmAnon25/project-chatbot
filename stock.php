@@ -16,7 +16,7 @@
 
 
 			<div class="input-group">
-				<input type="text" placeholder="Username" name="usernameS" " required>
+				<input type="text" placeholder="Username" name="usernameS" required>
 			</div>
             
 			<div class="input-group">
@@ -31,7 +31,7 @@
 				<input type="text" placeholder="room" name="rm"  required>
 			</div>
 
-
+				<!-- date -->
 			<div class="input-group">
 				<label>วันที่ของมาถึง</label><br>
 				<input type="date" name="dates" value="" />
