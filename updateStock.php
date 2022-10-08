@@ -3,6 +3,7 @@
 include('config.php');
 
 //รับค่าที่มาจากฟอร์มแก้ไข
+
 $id = $_POST["id"];
 $usernameS = $_POST["usernameS"];
 $lastnameS = $_POST["lastnameS"];
@@ -17,9 +18,9 @@ $f_name	= $image['name'];
 $sql = "UPDATE supplies SET usernameS ='$usernameS', lastnameS ='$lastnameS', 
 pn='$pn',rm='$rm', dates='$dates', pic='$f_name' WHERE id=$id; ";
 
-$result = mysqli_query($conn, $sql);
+$query = mysqli_query($conn, $sql);
 
-if ($result) {
+if ($query) {
   header("location:welcomestock.php");
   exit(0);
 } else {

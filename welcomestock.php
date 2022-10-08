@@ -2,7 +2,8 @@
 
 include 'config.php';
 
-$sql = "SELECT * FROM  supplies ";
+
+$sql = "SELECT * FROM supplies ";
 $query = mysqli_query($conn,$sql);
 $count = mysqli_num_rows($query);
 $order = 1;
@@ -45,16 +46,23 @@ if (!isset($_SESSION['usernameA'])) {
         border-radius: 4px;
       }
 
+      .btnReset{
+        height: 39px;
+        font-weight: bold;
+        border-radius: 4px;
+        margin: 8px 0;
+      }
       .btnStock {
         border: none;
         outline: none;
-        height: 50px;
-        width: 100%;
+        height: 39px;
+        width: 86%;
         background-color: hsl(195, 100%, 48%);
         color: white;
         border-radius: 4px;
         font-weight: bold;
         margin: 8px 0;
+        margin-right: 12px;
       }
       .btnStock:hover {
         background: white;
@@ -70,7 +78,7 @@ if (!isset($_SESSION['usernameA'])) {
       }
 
       .containerStock {
-        padding: 16px;
+        padding: 24px;
       }
 
       .spanClose.psw {
@@ -215,15 +223,15 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)) {?>
 
         <tr>
-            <td><?php echo $order++;?></td>
-            <td><?php echo $row["rm"]; ?></td>
-            <td><?php echo $row["usernameS"]; ?></td>
-            <td><?php echo $row["lastnameS"]; ?></td>
-            <td><?php echo $row["pn"]; ?></td>
-            <td><?php echo $row["dates"]; ?></td>
-            <td><?php echo $row["pic"]; ?></td>
-            <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" onclick="return confirm('ยืนยันการแก้ไขข้อมูล')">Edit</a></td>
-            <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
+            <td class="text-center"><?php echo $order++;?></td>
+            <td class="text-center"><?php echo $row["rm"]; ?></td>
+            <td class="text-center"><?php echo $row["usernameS"]; ?></td>
+            <td class="text-center"><?php echo $row["lastnameS"]; ?></td>
+            <td class="text-center"><?php echo $row["pn"]; ?></td>
+            <td class="text-center"><?php echo $row["dates"]; ?></td>
+            <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
+            <td class="text-center"><a <?php echo $row["id"] ?> onclick="document.getElementById('id01').style.display='block'"style="width: auto" class="btn btn-info" >Edit</a></td>
+            <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
           </tr>
         <?php } ?>
    
@@ -237,23 +245,55 @@ if (!isset($_SESSION['usernameA'])) {
     <?php } ?>
     
     <br>
-    <a href="stock.php" class="btn btn-success" style="width: 100%;">เพิ่มพัสดุ</a>
+    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">เพิ่มพัสดุ</a>
 </div>
     
+
 <!-- Popup edit -->
+<?php
+
+include 'config.php';
+
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM supplies ";
+$query = mysqli_query($conn,$sql);
+$row = mysqli_fetch_assoc($query);
+
+?>
+
+
+
+
 <div id="id01" class="modal">
-      <form class="modal-content animate"  action="/action_page.php"  method="post">
+      <form class="modal-content animate login-email"  action="updateStock.php"  method="post" enctype="multipart/form-data" id="form1" name="form1">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'"  class="close spanClose"  title="Close Modal"  >&times;</span>
         </div>
 
+        <input type="hidden" value="<?php echo $row["id"]; ?>" name="id">
         <div class="containerStock">
-          <label for="uname"><b>Username</b></label>
-          <input class="fromStock" type="text"  placeholder="Enter Username"  name="uname"  required/>
+          <h3 class  = "text-center fw-bold"> Edit package</h3>
+          <label ><b>First name</b></label>
+          <input class="fromStock" type="text" placeholder="Username" name="usernameS" value="<?php echo $row["usernameS"]; ?>">
 
-          <label for="psw"><b>Password</b></label>
-          <input class="fromStock" type="password" placeholder="Enter Password" name="psw" required/>
-          <button type="submit" class="btnStock">Login</button>
+          <label ><b>Last name</b></label>
+          <input class="fromStock" type="varchar" placeholder="Lastname" name="lastnameS"  value="<?php echo $row["lastnameS"]; ?>">
+          
+          <label ><b>Phone number</b></label>
+          <input class="fromStock" type="tel" placeholder="Tel" name="pn"  value="<?php echo $row["pn"]; ?>">
+
+          <label ><b>Room number</b></label>
+          <input class="fromStock" type="text" placeholder="room" name="rm"  value="<?php echo $row["rm"]; ?>">
+
+          <label ><b>Arrival date</b></label>
+          <input class="fromStock" type="date" name="dates"  value ="<?php echo $row["dates"]; ?>">
+
+          <label ><b>Image Upload</b></label>
+          <input class="fromStock" type="file"  name="pic" id="image"  value=" <?php  echo $row["pic"]; ?>">
+          
+          <input type="submit" class="btnStock"   value="Update"></input> 
+          <input type="reset" value="Reset" class="btn btn-danger btnReset">
         </div>
       </form>
     </div>
@@ -271,6 +311,66 @@ if (!isset($_SESSION['usernameA'])) {
     }
     </script>
   <!-- Popup edit -->
+
+
+
+  <!-- Popup Add -->
+  <?php
+
+  include 'config.php';
+
+  // $id = $_GET["id"];
+
+  $sql = "SELECT * FROM supplies ";
+  $query = mysqli_query($conn,$sql);
+  $row = mysqli_fetch_assoc($query);
+
+  ?>
+    <div id="id02" class="modal">
+          <form class="modal-content animate login-email"  action="stocksave.php"  method="post" enctype="multipart/form-data" id="form1" name="form1">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id02').style.display='none'"  class="close spanClose"  title="Close Modal"  >&times;</span>
+            </div>
+
+            <div class="containerStock">
+              <h3 class  = "text-center fw-bold">Add package</h3>
+              <label ><b>First name</b></label>
+              <input class="fromStock" type="text" placeholder="Username" name="usernameS" required>
+
+              <label ><b>Last name</b></label>
+              <input class="fromStock" type="varchar" placeholder="Lastname" name="lastnameS"  required>
+              
+              <label ><b>Phone number</b></label>
+              <input class="fromStock" type="tel" placeholder="Tel" name="pn"  required>
+
+              <label ><b>Room number</b></label>
+              <input class="fromStock" type="text" placeholder="room" name="rm"  required>
+
+              <label ><b>Arrival date</b></label>
+              <input class="fromStock" type="date" name="dates" value="" />
+
+              <label ><b>Image Upload</b></label>
+              <input class="fromStock" type="file"  name="pic" id="image" />
+              
+              <input type="submit" class="btnStock"   id="add"  value="Add"></input> 
+              <input type="reset" value="Reset" class="btn btn-danger btnReset">
+            </div>
+          </form>
+        </div>
+        
+    <!-- javascript popup -->
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+      <!-- Popup Add -->
 
     <!-- Drop down button -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
