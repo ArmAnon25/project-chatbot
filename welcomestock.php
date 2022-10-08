@@ -223,7 +223,6 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)) {?>
 
         <tr>
-<<<<<<< HEAD
             <td class="text-center"><?php echo $order++;?></td>
             <td class="text-center"><?php echo $row["rm"]; ?></td>
             <td class="text-center"><?php echo $row["usernameS"]; ?></td>
@@ -233,17 +232,6 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
             <td class="text-center"><a <?php echo $row["id"] ?> onclick="document.getElementById('id01').style.display='block'"style="width: auto" class="btn btn-info" >Edit</a></td>
             <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
-=======
-            <td class= "text-center"><?php echo $order++;?></td>
-            <td class= "text-center"><?php echo $row["rm"]; ?></td>
-            <td class= "text-center"><?php echo $row["usernameS"]; ?></td>
-            <td class= "text-center"><?php echo $row["lastnameS"]; ?></td>
-            <td class= "text-center"><?php echo $row["pn"]; ?></td>
-            <td class= "text-center"><?php echo $row["dates"]; ?></td>
-            <td class= "text-center"> <img src = "img/<?php echo $row['pic'];?>" width="30%"> </td>
-            <td class= "text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
-            <td class= "text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
->>>>>>> 198baab7b3d76b49f89c4eb4f161792abd3b9a51
           </tr>
         <?php } ?>
    
