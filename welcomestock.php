@@ -30,7 +30,7 @@ if (!isset($_SESSION['usernameA'])) {
     <title>Stock Admin</title>
    
     <style>
-      body {
+      * {
         
         font-family: 'Montserrat', sans-serif;
       }
@@ -172,10 +172,10 @@ if (!isset($_SESSION['usernameA'])) {
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="welcomeAdmin.php">home</a>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="utilities.php">เพิ่มสาธารณูปโภค</a>
+                <a class="nav-link fs-6 fw-normal" href="utilities.php">utility</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">เพิ่มพัสดุ</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">parcel</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['usernameA'] ?></a>
@@ -191,10 +191,11 @@ if (!isset($_SESSION['usernameA'])) {
   <!-- Table stock -->
 <div class="container">
 <h1 class="text-center mt-3 p-3">-</h1>
+<h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Package All</h1>
     <form action="searchStock.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
-          <input type="text" placeholder="กรอกชื่อห้องที่ต้องการค้นหา" class="form-control" name="data" required>
+          <input type="text" placeholder="Type to search for room number or firstnname." class="form-control" name="data" required>
         </div>
         <div class="col-6">
           <input type="submit" value="Search" class="btn btn-info">
@@ -230,8 +231,8 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["pn"]; ?></td>
             <td class="text-center"><?php echo $row["dates"]; ?></td>
             <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
-            <td class="text-center"><a <?php echo $row["id"] ?> onclick="document.getElementById('id01').style.display='block'"style="width: auto" class="btn btn-info" >Edit</a></td>
-            <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
+            <td class="text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
+            <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
           </tr>
         <?php } ?>
    
@@ -240,92 +241,19 @@ if (!isset($_SESSION['usernameA'])) {
     <?php } else {?>
 
         <div class="alert alert-danger">
-        <b>ไม่มีข้อมูในระบบ!!</b>
+        <b>Search data not found!!!!</b>
         </div>
     <?php } ?>
     
     <br>
-    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">เพิ่มพัสดุ</a>
+    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">Add parcel</a>
 </div>
     
-
-<!-- Popup edit -->
-<?php
-
-include 'config.php';
-
-$id = $_GET["id"];
-
-$sql = "SELECT * FROM supplies ";
-$query = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($query);
-
-?>
-
-
-
-
-<div id="id01" class="modal">
-      <form class="modal-content animate login-email"  action="updateStock.php"  method="post" enctype="multipart/form-data" id="form1" name="form1">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'"  class="close spanClose"  title="Close Modal"  >&times;</span>
-        </div>
-
-        <input type="hidden" value="<?php echo $row["id"]; ?>" name="id">
-        <div class="containerStock">
-          <h3 class  = "text-center fw-bold"> Edit package</h3>
-          <label ><b>First name</b></label>
-          <input class="fromStock" type="text" placeholder="Username" name="usernameS" value="<?php echo $row["usernameS"]; ?>">
-
-          <label ><b>Last name</b></label>
-          <input class="fromStock" type="varchar" placeholder="Lastname" name="lastnameS"  value="<?php echo $row["lastnameS"]; ?>">
-          
-          <label ><b>Phone number</b></label>
-          <input class="fromStock" type="tel" placeholder="Tel" name="pn"  value="<?php echo $row["pn"]; ?>">
-
-          <label ><b>Room number</b></label>
-          <input class="fromStock" type="text" placeholder="room" name="rm"  value="<?php echo $row["rm"]; ?>">
-
-          <label ><b>Arrival date</b></label>
-          <input class="fromStock" type="date" name="dates"  value ="<?php echo $row["dates"]; ?>">
-
-          <label ><b>Image Upload</b></label>
-          <input class="fromStock" type="file"  name="pic" id="image"  value=" <?php  echo $row["pic"]; ?>">
-          
-          <input type="submit" class="btnStock"   value="Update"></input> 
-          <input type="reset" value="Reset" class="btn btn-danger btnReset">
-        </div>
-      </form>
-    </div>
-    
-<!-- javascript popup -->
-  <script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    </script>
-  <!-- Popup edit -->
 
 
 
   <!-- Popup Add -->
-  <?php
 
-  include 'config.php';
-
-  // $id = $_GET["id"];
-
-  $sql = "SELECT * FROM supplies ";
-  $query = mysqli_query($conn,$sql);
-  $row = mysqli_fetch_assoc($query);
-
-  ?>
     <div id="id02" class="modal">
           <form class="modal-content animate login-email"  action="stocksave.php"  method="post" enctype="multipart/form-data" id="form1" name="form1">
             <div class="imgcontainer">

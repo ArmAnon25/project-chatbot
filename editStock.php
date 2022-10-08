@@ -4,7 +4,7 @@ include 'config.php';
 
 $id = $_GET["id"];
 
-$sql = "SELECT * FROM add_util WHERE id=$id";
+$sql = "SELECT * FROM supplies WHERE id=$id";
 $query = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($query);
 
@@ -17,7 +17,7 @@ if (!isset($_SESSION['usernameA'])) {
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@ if (!isset($_SESSION['usernameA'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home_log_reg.css">
-	<title>Edit Utillitie</title>
+	<title>Edit Stock</title>
 
 	<style>
       * {
@@ -99,56 +99,54 @@ if (!isset($_SESSION['usernameA'])) {
         </div>
       </nav>
 
-
 	<div class="container my-3 p-4">
-		<br>
-		<br>
-		<br>
-		<h2 class="text-left">Edit Utillitie</h2>
-		<hr>
-		<form action="updateUti.php" method="POST" class="login-email" enctype="multipart/form-data" id="form1" name="form1">
+	<br>
+	<br>
+	<br>
+    <h2 class="text-left">Edit Parcel </h2>
+    <hr>
+		<form action ="updateStock.php" method="POST" class="login-email" enctype="multipart/form-data" id="form1" name="form1">
+        <div class="form-group col-6">
            
-			<div class="form-group col-6">
+
             <input type="hidden" value="<?php echo $row["id"]; ?>" name="id">
 			<div class="form-group">
-			<label class="fw-bold">Firstname</label>
-				<input type="text" placeholder="Enter your firstname"  class="fromStock"name="usernameU" value="<?php echo $row["usernameU"]; ?>">
+            <label class="fw-bold ">Firstname</label>
+				<input type="text" placeholder="Enter your Firstname" class="fromStock" name="usernameS" value="<?php echo $row["usernameS"]; ?>">
 			</div>
             
 			<div class="form-group">
-			<label class="fw-bold">Lastname</label>
-				<input type="varchar" placeholder=" Enter your Lastname"  class="fromStock"name="lastnameU" value="<?php echo $row["lastnameU"]; ?>">
+            <label class="fw-bold ">Lastname</label>
+				<input type="varchar" placeholder="Enter your Lastname" class="fromStock" name="lastnameS"  value="<?php echo $row["lastnameS"]; ?>">
             </div>
 
-			<div class="form-group">
-			<label class="fw-bold">Total Cost</label>
-				<input type="integer" placeholder=" Enter your Totalcost"  class="fromStock"name="cost"  value="<?php echo $row["cost"]; ?>">
+			<div class="form-group ">
+            <label class="fw-bold ">Phonnumber</label>
+				<input type="tel" placeholder="Enter your phonenumber" class="fromStock" name="pn"  value="<?php echo $row["pn"]; ?>">
 			</div>
 
 			<div class="form-group">
-			<label class="fw-bold">Roomnumber</label>
-				<input type="text" placeholder="room" class="fromStock" name="rn"  value="<?php echo $row["rn"]; ?>">
+            <label class="fw-bold ">Roomnumber</label>
+				<input type="text" placeholder="Enter your roomnumber"  class="fromStock" name="rm"  value="<?php echo $row["rm"]; ?>">
 			</div>
+
 
 			<div class="form-group">
 				<label class="fw-bold ">Date the parcel arrived</label><br>
-				<input type="date" name="dates" class="fromStock"  value ="<?php echo $row["dateu"]; ?>">
+				<input type="date" name="dates" class="fromStock"  value ="<?php echo $row["dates"]; ?>">
              </div>
 
             <div class="form-group">
-				<label class="fw-bold">image Utillitie Upload</label><br>
-				<input type="file"   class="fromStock" name="picU" id="image" value="<?php echo $row["picU"]; ?>">
+				<label class="fw-bold ">image Package Upload</label><br>
+				<input type="file"  name="pic" id="image"   class="fromStock" value="<?php echo $row["pic"]; ?>">
 			</div>
-
-            
-
 
 		
 			<div class="my-3">
-				<input type="submit" class="btnStock" value="Update" ></input> 
+				<input type="submit" class="btnStock"  value="Update"></input> 
 				<input type="reset" value="Reset" class="btn btn-danger btnReset">
 			</div>
-			</div>
+        </div> 
 		</form>
 	</div>
 

@@ -43,10 +43,10 @@ if (!isset($_SESSION['usernameA'])) {
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="#">home</a>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="utilities.php">เพิ่มสาธารณูปโภค</a>
+                <a class="nav-link fs-6 fw-normal" href="utilities.php">utility</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">เพิ่มพัสดุ</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">parcel</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['usernameA'] ?></a>
@@ -60,7 +60,6 @@ if (!isset($_SESSION['usernameA'])) {
       </nav>
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <a href="utilities.php">เพิ่มสาธารณูปโภค</a>
-      <a href="stock.php">เพิ่มพัสดุ</a>
+  
 </body>
 </html>
