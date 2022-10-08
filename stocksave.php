@@ -7,7 +7,7 @@ if($_POST) {
 	$lastnameS = $_POST['lastnameS'];
     $pn = $_POST['pn'];
 	$rm = $_POST['rm'];
-	$date = $_POST['date'];
+	$dates = $_POST['dates'];
 	$image		= $_FILES['pic'];
 	$imageinfo	= pathinfo($image['name']);
     $f_name		= $image['name'];
@@ -26,8 +26,8 @@ if($_POST) {
 	}
 		
 	
-		$sql = "insert into supplies (usernameS, lastnameS, pn,rm,date, pic)
-		VALUES ('$usernameS', '$lastnameS', '$pn','$rm','$date', '$f_name')";
+		$sql = "insert into supplies (usernameS, lastnameS, pn,rm,dates, pic)
+		VALUES ('$usernameS', '$lastnameS', '$pn','$rm','$dates', '$f_name')";
 		echo "vy ";
 		mysqli_query($conn,$sql) or die("error=$sql"); 
 

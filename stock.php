@@ -34,7 +34,7 @@
 
 			<div class="input-group">
 				<label>วันที่ของมาถึง</label><br>
-				<input type="date" name="date" value="" />
+				<input type="date" name="dates" value="" />
 
             <div class="input-group">
 				<label>image Package Upload</label><br>

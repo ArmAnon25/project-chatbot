@@ -58,9 +58,9 @@ $order = 1;
             <td><?php echo $row["usernameS"]; ?></td>
             <td><?php echo $row["lastnameS"]; ?></td>
             <td><?php echo $row["pn"]; ?></td>
-            <td><?php echo $row["date"]; ?></td>
-            <td><?php echo $row["pic"]; ?></td>
-            <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" onclick="return confirm('ยืนยันการแก้ไขข้อมูล')">Edit</a></td>
+            <td><?php echo $row["dates"]; ?></td>     
+            <td><?php echo $row['pic']?></td>
+            <td><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
             <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">Delete</a></td>
           </tr>
         <?php } ?>
