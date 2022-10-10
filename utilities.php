@@ -262,7 +262,7 @@ if (!isset($_SESSION['usernameA'])) {
             <label ><b>Room number</b></label>
             <input class="fromStock" type="text" placeholder=" Enter your roomnumber" name="rn"  required>
 
-            <label ><b>Payment start date</b></label>
+            <label ><b>Payment date</b></label>
             <input class="fromStock" type="date"  name="dateu" required >
 
             <label ><b>Image Upload</b></label>
