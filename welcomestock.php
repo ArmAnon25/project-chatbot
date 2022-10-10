@@ -230,10 +230,11 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["lastnameS"]; ?></td>
             <td class="text-center"><?php echo $row["pn"]; ?></td>
             <td class="text-center"><?php echo $row["dates"]; ?></td>
-            <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
+            <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width=20%"></td>
             <td class="text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
             <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
           </tr>
+          
         <?php } ?>
    
       </tbody>
