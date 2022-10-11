@@ -138,7 +138,16 @@ if (!isset($_SESSION['usernameA'])) {
 
             <div class="form-group">
 				<label class="fw-bold ">image Package Upload</label><br>
-				<input type="file"  name="pic" id="image"   class="fromStock" value="<?php echo $row["pic"]; ?>">
+        <?PHP 
+                    if(file_exists("img/{$row['pic']}"))
+                    {
+                    ?>
+                        <img src="img/<?PHP echo $row['pic']?>" width="100" border="0" />
+                    <?PHP
+                    }
+                    ?>
+         <br><br>           
+         <input type="file"   class="fromStock" name="pic" id="image" value="<?php echo $row["pic"]; ?>">
 			</div>
 
 		
