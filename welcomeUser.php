@@ -361,16 +361,17 @@ if (!isset($_SESSION['username'])) {
                   ?>
                   <div class="card mb-2 ">
                   <div class="card-header bg-dark text-light">
-                      <span class="text-start">Posted By : <?= $row['nameD']?></span>
-                      <span class="text-end">Date : <?= $row['cur_date']?></span>
+                      <span class="float-start">Posted By : <?= $row['nameD']?></span>
+                      <span class="float-end">Date : <?= $row['cur_date']?></span>
                   </div>
                       <div class="card-body">
                           <p class="card-text"><?= $row['comment']?></p>
                       </div>
                       <div class="card-footer">
                           <div class="float-right">
-                            <a href="welcomeUser.php?edit=<?= $row['id'] ?>" class="text-info order-lg-2"  title="Edit"><i class="fas fa-edit"></i></a>
-                            <a href="commentDB.php?del=<?= $row['id'] ?>" class="text-danger order-lg-1" onclick="return confirm('Do you want to delete this comment?');" title="Delete"><i class="fas fa-trash"></i></a>  
+                            <a href="commentDB.php?del=<?= $row['id'] ?>" class="text-dark float-end p-1" onclick="return confirm('Do you want to delete this comment?');" title="Delete"><i class="fas fa-trash"></i></a>  
+                            <a href="welcomeUser.php?edit=<?= $row['id'] ?>" class="text-dark float-end p-1"  title="Edit"><i class="fas fa-edit"></i></a>
+                            
                           </div>
                       </div>
               </div>
