@@ -162,7 +162,6 @@ if (isset($_POST['submitA'])) {
 
 			
 			<p class="login-register-text">Don't have an account Admin? <a href="registerAdmin.php" class="text-info">Click Here</a>.</p>
-			<p class="login-register-text">Back to Homepage<a href="homepage.php" class="text-info"> Homepage </a></p>
 		</form>
 	</div>
 	</div>

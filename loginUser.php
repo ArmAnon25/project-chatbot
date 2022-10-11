@@ -167,7 +167,6 @@ if (isset($_POST['submit'])) {
 
 			
 			        <p class="login-register-text">Don't have an account User? <a href="registerUser.php">Click Here</a>.</p>
-			        <p class="login-register-text">Back to Homepage<a href="homepage.php"> Homepage </a></p>
 		        </form>
 	        </div>
 	    </div>
