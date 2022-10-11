@@ -203,7 +203,7 @@ if (!isset($_SESSION['usernameA'])) {
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
-            <td>No</td>
+            <td>No.</td>
             <td>Room</td>
             <td>Firstname</td>
             <td>Lastname</td>

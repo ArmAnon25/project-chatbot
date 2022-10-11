@@ -281,14 +281,60 @@
         </div>
       </section>
 
-      <!-- team section -->
+      <!-- comment -->
+    <?php
+      require 'commentDB.php';
+    ?>  
       <section id="review" class="team section-padding">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
+                <h2>DORMITORY REVIEW</h2>
+              </div>
+            </div>
+          </div>
+  
+            <div class="row">
+            <?php
+                      $sql="SELECT * FROM comment_table ORDER BY id DESC";
+                      $result=$conn->query($sql);
+                      while($row=$result->fetch_assoc()){
+                  ?>
+
+              <div class="col-4" style="padding-bottom: 34px; border-radius: 8px;">
+
+                <div class="p-3 border bg-dark text-light" style="width: 100%; height: 44%;">
+                  <span class=" float-start">Posted By : <?= $row['nameD']?></span>
+                  <span class=" float-end">Date : <?= $row['cur_date']?></span>
+                </div>
+
+                <div class="card-body border shadow" style="width: 100%; height: 70%;">
+                          <p class="card-text"><?= $row['comment']?></p>
+                </div>
+
+                <!-- <div class="card-footer border" style="width: 100%; height: 36%;">
+                  <div class="float-right">
+                      <a href="commentDB.php?del=<?= $row['id'] ?>" class="text-dark float-end p-1" onclick="return confirm('Do you want to delete this comment?');" title="Delete"><i class="fas fa-trash"></i></a>  
+                      <a href="welcomeUser.php?edit=<?= $row['id'] ?>" class="text-dark float-end p-1"  title="Edit"><i class="fas fa-edit"></i></a>   
+                  </div>
+                </div> -->
+
+              </div>
+              <?php } ?>
+            </div>
+          
+        </div>
+      </section>
+      
+      <!-- team section -->
+      <!-- <section id="review" class="team section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-header text-center pb-3">
                 <h2>REVIEW</h2>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Quibusdam, possimus.</p> -->
+               
               </div>
             </div>
           </div>
@@ -336,7 +382,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
     
 

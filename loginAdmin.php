@@ -70,7 +70,7 @@ if (isset($_POST['submitA'])) {
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             width: 100%;
-            height: 100%;
+            height: 80%;
         }
         .btn{
             border: none;

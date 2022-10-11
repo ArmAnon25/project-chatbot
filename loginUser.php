@@ -56,7 +56,8 @@ if (isset($_POST['submit'])) {
             font-family: 'Montserrat', sans-serif;
         }
         .container-form{
-            padding: 100px 0;
+            padding: 110px 0;
+            
         }
         body{
             background: "#fff";
@@ -64,7 +65,8 @@ if (isset($_POST['submit'])) {
         .row{
             background: hsl(0, 0%, 95%);
             border-radius: 30px;  
-            padding:0rem;             
+            padding:0rem;  
+            
         }
         .image{
             border-bottom-right-radius: 20px;
@@ -72,7 +74,7 @@ if (isset($_POST['submit'])) {
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             width: 100%;
-            height: 100%;
+            height: 80%;
         }
         .btn{
             border: none;
