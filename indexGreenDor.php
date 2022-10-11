@@ -34,22 +34,22 @@ if (!isset($_SESSION['username'])) {
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="homepage.php#carouselExampleCaptions">home</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomeUser.php#carouselExampleCaptions">home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="homepage.php#domitory">domitory</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomeUser.php#domitory">domitory</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="homepage.php#facilities">facilities</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomeUser.php#facilities">facilities</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="homepage.php#neighborhoods">neighborhoods</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomeUser.php#neighborhoods">neighborhoods</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="homepage.php#review">review</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomeUser.php#review">review</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
+                <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item bi bi-box-arrow-right" href="logout.php">&ensp;Logout</a></li>
                 </ul>

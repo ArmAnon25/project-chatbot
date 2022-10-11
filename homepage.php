@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap animation fade  text and button Down -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
     <link rel="stylesheet" href="home_log_reg.css">
 </head>
 <body>
@@ -56,7 +57,7 @@
                 <a class="nav-link fs-6 fw-normal" href="#review">review</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
                   <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
@@ -244,7 +245,7 @@
                     <img src="./project-2-img/LINE_ALBUM_2092565 BE_๒๒๐๙๒๐_26.jpg" alt="" class="img-fluid">
                   </div>
                   <h3 class="card-title">PHO LUNG HO</h3>
-                  <p class="lead">ร้านเฝอลุงโฮน้ำซุปกลมกล่อมสูตเฉพาะ<br>ร้านอยู่ติดทางเข้าหอ</p>
+                  <p class="lead">ร้านเฝอลุงโฮน้ำซุปกลมกล่อมสูตรเฉพาะ<br>ร้านอยู่ติดทางเข้าหอ</p>
                    
                 
                 </div>

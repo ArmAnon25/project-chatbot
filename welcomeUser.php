@@ -16,11 +16,19 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <!-- Bootstrap icon-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Googole front -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap animation fade  text and button Down -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- icon fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- css -->
     <link rel="stylesheet" href="home_log_reg.css">
     <title>Welcome User</title>
 
@@ -70,7 +78,7 @@ if (!isset($_SESSION['username'])) {
                 <a class="nav-link fs-6 fw-normal" href="#review">review</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
+                <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['username'] ?></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item bi bi-box-arrow-right" href="logout.php">&ensp;Logout</a></li>
                 </ul>
@@ -304,64 +312,72 @@ if (!isset($_SESSION['username'])) {
         </div>
       </section>
 
-      <!-- team section -->
+    <!-- comment -->
+    <?php
+      require 'commentDB.php';
+    ?>  
       <section id="review" class="team section-padding">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
-                <h2>REVIEW</h2>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Quibusdam, possimus.</p> -->
+                <h2>WRITE YOUR COMMENT</h2>
               </div>
             </div>
           </div>
+
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <img src="./project-1-img/team-1.jpg" alt="" class="img-fluid rounded-circle">
-                  <h3 class="card-title py-2">Channat</h3>
-                  <p class="card-text">เฟอร์นิเจอร์ครบครัน ที่จอดรถกว้าง<br>มีบริการห้องพักทั้งรายเดือนและรายวัน</p> 
+          <div class="col-12 mb-2">
+            <div class="col-lg-12 card mt-2">
+                <form action="welcomeUser.php" method="POST" class="p-4">
+                <input type="hidden" name="id" value="<?= $u_id; ?>">
+
+                    <div class="form-group">
+                        <input type="text" name="nameD" class="form-control my-3 " placeholder="Enter your name" required value="<?= $u_nameD; ?>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="comment" class="form-control my-3" placeholder="Write your comment here" required><?= $u_comment; ?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <?php if($update==true){ ?>
+                            <input type="submit" name="update" class="btn btn-info" value="Update Comment" style="width: 100%;">
+                        <?php } else{ ?>
+                        <input type="submit" name="submit" class="btn btn-info" value="Post comment" style="width: 100%;"> 
+                        <?php } ?>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+        <!-- <div class="row col-12"> -->
+          <div class="col-lg-4">  
+                  <?php
+                      $sql="SELECT * FROM comment_table ORDER BY id DESC";
+                      $result=$conn->query($sql);
+                      while($row=$result->fetch_assoc()){
+                  ?>
+                  <div class="card mb-2 ">
+                  <div class="card-header bg-dark text-light">
+                      <span class="text-start">Posted By : <?= $row['nameD']?></span>
+                      <span class="text-end">Date : <?= $row['cur_date']?></span>
+                  </div>
+                      <div class="card-body">
+                          <p class="card-text"><?= $row['comment']?></p>
+                      </div>
+                      <div class="card-footer">
+                          <div class="float-right">
+                            <a href="welcomeUser.php?edit=<?= $row['id'] ?>" class="text-info order-lg-2"  title="Edit"><i class="fas fa-edit"></i></a>
+                            <a href="commentDB.php?del=<?= $row['id'] ?>" class="text-danger order-lg-1" onclick="return confirm('Do you want to delete this comment?');" title="Delete"><i class="fas fa-trash"></i></a>  
+                          </div>
+                      </div>
+              </div>
+              <?php } ?>
+          <!-- </div> -->
+        </div>
                   
-                  <!-- <p class="socials">
-                    <i class="bi bi-twiter text-dark mx-1"></i>
-                    <i class="bi bi-facebook text-dark mx-1"></i>
-                    <i class="bi bi-linkedin text-dark mx-1"></i>
-                    <i class="bi bi-instagram text-dark mx-1"></i>
-                  </p> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <img src="./project-1-img/team-2.jpg" alt="" class="img-fluid rounded-circle">
-                  <h3 class="card-title py-2">Siraphoom</h3>
-                  <p class="card-text">มีรปภ.ประจำ 24 ชม. และมีส่วนลด<br>พิเศษสำหรับผู้ที่ทําสัญญา 2 ปี</p> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <img src="./project-1-img/team-3.jpg" alt="" class="img-fluid rounded-circle">
-                  <h3 class="card-title py-2">Krittanat</h3>
-                  <p class="card-text">โต๊ะ built-in ภายนอกระเบียงมีพื้นที่สำหรับซักล้างแบ่งพื้นที่เป็นสัดส่วนชัดเจน</p> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <img src="./project-1-img/team-4.jpg" alt="" class="img-fluid rounded-circle">
-                  <h3 class="card-title py-2">Anon</h3>
-                  <p class="card-text">มีเครื่องซักผ้าหยอดเหรียญ ตู้กรอกนํ้าหยอดเหรียญ เเละกล้องวงจรปิด CTTV</p> 
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -381,5 +397,13 @@ if (!isset($_SESSION['username'])) {
      
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CDN comment -->
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

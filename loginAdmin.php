@@ -80,7 +80,7 @@ if (isset($_POST['submitA'])) {
             background-color: hsl(195, 100%, 48%);
             color: white;
             border-radius: 4px;
-            font-weight: bold;
+            font-weight: normal;
         }
         .btn:hover{
             background: white;
@@ -119,7 +119,7 @@ if (isset($_POST['submitA'])) {
                 <a class="nav-link" href="#contact">Contact</a>
               </li> -->
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="loginUser.php">Login user</a></li>
                     <li><a class="dropdown-item" href="#">Login Admin</a></li>
