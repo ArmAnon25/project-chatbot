@@ -56,7 +56,8 @@ if (isset($_POST['submit'])) {
             font-family: 'Montserrat', sans-serif;
         }
         .container-form{
-            padding: 100px 0;
+            padding: 110px 0;
+            
         }
         body{
             background: "#fff";
@@ -64,7 +65,8 @@ if (isset($_POST['submit'])) {
         .row{
             background: hsl(0, 0%, 95%);
             border-radius: 30px;  
-            padding:0rem;             
+            padding:0rem;  
+            
         }
         .image{
             border-bottom-right-radius: 20px;
@@ -72,7 +74,7 @@ if (isset($_POST['submit'])) {
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             width: 100%;
-            height: 100%;
+            height: 80%;
         }
         .btn{
             border: none;
@@ -82,7 +84,7 @@ if (isset($_POST['submit'])) {
             background-color: hsl(195, 100%, 48%);
             color: white;
             border-radius: 4px;
-            font-weight: bold;
+            font-weight: normal;
         }
         .btn:hover{
             background: white;
@@ -122,7 +124,7 @@ if (isset($_POST['submit'])) {
                 <a class="nav-link" href="#contact">Contact</a>
               </li> -->
               <li class="nav-item dropdown">
-                <a class="getstarted bg-info fs-6 fw-normal text-decoration-underline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Login user</a></li>
                     <li><a class="dropdown-item" href="loginAdmin.php">Login Admin</a></li>
@@ -167,7 +169,6 @@ if (isset($_POST['submit'])) {
 
 			
 			        <p class="login-register-text">Don't have an account User? <a href="registerUser.php">Click Here</a>.</p>
-			        <p class="login-register-text">Back to Homepage<a href="homepage.php"> Homepage </a></p>
 		        </form>
 	        </div>
 	    </div>
