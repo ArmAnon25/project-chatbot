@@ -4,7 +4,9 @@ include 'config.php';
 
 $sql = "SELECT * FROM  add_util ";
 $query = mysqli_query($conn,$sql);
+$count = mysqli_num_rows($query);
 $order = 1;
+
 
 session_start();
 
@@ -199,7 +201,7 @@ if (!isset($_SESSION['usernameA'])) {
       </div>
 
     </form>
-   
+    <?php if ($count > 0) { ?>
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
@@ -236,6 +238,12 @@ if (!isset($_SESSION['usernameA'])) {
    
 </tbody>
     </table>
+    <?php } else {?>
+
+<div class="alert alert-danger">
+<b>No information !!!!</b>
+</div>
+<?php } ?>
     <br>
     <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'">Add Utilities</a>
     

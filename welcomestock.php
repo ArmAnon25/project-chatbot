@@ -242,7 +242,7 @@ if (!isset($_SESSION['usernameA'])) {
     <?php } else {?>
 
         <div class="alert alert-danger">
-        <b>Search data not found!!!!</b>
+        <b>No information !!!!</b>
         </div>
     <?php } ?>
     

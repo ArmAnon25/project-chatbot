@@ -171,10 +171,10 @@ if (!isset($_SESSION['usernameA'])) {
               <li class="nav-item">
                 <a class="nav-link fs-6 fw-normal" href="welcomeAdmin.php">home</a>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="utilities.php">Add Public utility</a>
+                <a class="nav-link fs-6 fw-normal" href="utilities.php">utility</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">Add parcel</a>
+                <a class="nav-link fs-6 fw-normal" href="welcomestock.php">parcel</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="getstarted bg-info fs-6 fw-normal dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo  $_SESSION['usernameA'] ?></a>
