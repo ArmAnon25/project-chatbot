@@ -4,7 +4,9 @@ include 'config.php';
 
 $sql = "SELECT * FROM  add_util ";
 $query = mysqli_query($conn,$sql);
+$count = mysqli_num_rows($query);
 $order = 1;
+
 
 session_start();
 
@@ -24,6 +26,22 @@ if (!isset($_SESSION['usernameA'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home_log_reg.css">
+    <!-- checkbox all -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#checkAll").click(function(){
+          if($(this).is(":checked")){
+
+            $(".checkItem").prop('checked',true);
+          }
+            else{
+              $(".checkItem").prop('checked',false);
+            }
+        })
+
+      })
+    </script>
     <title>Homepage Utility</title>
     
     <style>
@@ -199,10 +217,13 @@ if (!isset($_SESSION['usernameA'])) {
       </div>
 
     </form>
-   
+    <?php if ($count > 0) { ?>
+      <form action="deleteallU.php" method="POST">
+      <button type="submit" name="delete_multiple_btn" class="btn btn-danger">Delete</button>
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
+            <td>Select<input type="checkbox" id="checkAll"></td>
             <td>No.</td>
             <td>Room</td>
             <td>Firstname</td>
@@ -221,6 +242,7 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)){?>
 
     <tr>
+            <td class="text-center"> <input type="checkbox" name="_delete_id[]" value="<?= $row['id']; ?>"class="checkItem"></td>
             <td class="text-center"><?php echo $order++;?></td>
             <td class="text-center"><?php echo $row["rn"]; ?></td>
             <td class="text-center"><?php echo $row["usernameU"]; ?></td>
@@ -236,6 +258,13 @@ if (!isset($_SESSION['usernameA'])) {
    
 </tbody>
     </table>
+      </form>
+    <?php } else {?>
+
+<div class="alert alert-danger">
+<b>No information !!!!</b>
+</div>
+<?php } ?>
     <br>
     <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'">Add Utilities</a>
     

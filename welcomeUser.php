@@ -38,21 +38,20 @@ if (!isset($_SESSION['username'])) {
         }
         
     </style>
+    
 </head>
 <body>
-  <df-messenger intent="WELCOME" chat-title="KP.RESIDENT" agent-id="a0540f60-3127-4bef-808a-3229b279865c" language-code="th"></df-messenger>
-    <style>
-      df-messenger {
-    --df-messenger-bot-message: #969db6;
-    --df-messenger-button-titlebar-color: hsl(195, 100%, 48%);
-    --df-messenger-chat-background-color: #fafafa;
-    --df-messenger-font-color: #fff;
-    --df-messenger-send-icon: hsl(195, 100%, 48%);
-    --df-messenger-user-message: #969db6;
-    }
-    </style>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <!-- navbar -->
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"7cea180d7442cdf2a117fe5a184022aa","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
