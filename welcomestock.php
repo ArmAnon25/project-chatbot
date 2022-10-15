@@ -26,6 +26,23 @@ if (!isset($_SESSION['usernameA'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- checkbox -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#checkAll").click(function(){
+          if($(this).is(":checked")){
+
+            $(".checkItem").prop('checked',true);
+          }
+            else{
+              $(".checkItem").prop('checked',false);
+            }
+        })
+
+      })
+    </script>
+    
     <link rel="stylesheet" href="home_log_reg.css">
     <title>Stock Admin</title>
    
@@ -204,9 +221,13 @@ if (!isset($_SESSION['usernameA'])) {
 
     </form>
     <?php if ($count > 0) { ?>
+  
+     <form action="deleteallP.php" method="POST">
+      <button type="submit" name="delete_multiple_btn" class="btn btn-danger">Delete</button>
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
+            <td>Select <input type="checkbox" id="checkAll"></td>
             <td>No.</td>
             <td>Room</td>
             <td>Firstname</td>
@@ -224,6 +245,7 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)) {?>
 
         <tr>
+            <td class="text-center"> <input type="checkbox" name="_delete_id[]" value="<?= $row['id']; ?>" class="checkItem"></td>
             <td class="text-center"><?php echo $order++;?></td>
             <td class="text-center"><?php echo $row["rm"]; ?></td>
             <td class="text-center"><?php echo $row["usernameS"]; ?></td>
@@ -234,11 +256,12 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
             <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
           </tr>
-          
+          <br>
         <?php } ?>
    
       </tbody>
     </table>
+     </form>
     <?php } else {?>
 
         <div class="alert alert-danger">
