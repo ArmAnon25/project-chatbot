@@ -27,7 +27,7 @@ session_start();
 		    
 
 			<div class="col-lg-6 lg-2 px-5 pt-5">
-		        <form action="codeformFast.php" method="POST" class="login-email_user">
+		        <form action="codeformReport.php" method="POST" class="login-email_user">
                     <?php if(isset($_SESSION['success'])) {?>
 
                             <div class="alert alert-success" role="alert">
