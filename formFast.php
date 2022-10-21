@@ -77,7 +77,7 @@ session_start();
 
                     <div class="form-row">
 						<div class="col-lg-7">
-                        <input type="text"  name="detail"  class = "form-control my-4 p-2"  placeholder="Detail" ></input>
+                        <textarea type="text"  name="detail"  class = "form-control my-4 p-2"  placeholder="Detail" ></textarea>
 					</div>
 
 					<div class="form-row">

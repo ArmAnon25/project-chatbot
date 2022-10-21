@@ -11,8 +11,8 @@ if(isset($_POST['submit'])){
     $detail = $_POST['detail'];
 
     $sToken = "rsGposfOE6RHlvjakxUC4ax1Hcym7GUZXKGtpECFiu3";
-	$sMessage = "Contact Admin\n";
-    $sMessage .= "Subject:". $subject."\n";
+	// $sMessage = "Contact Admin\n";
+    $sMessage .= "Subject:". $subject."\n\n";
     $sMessage .= "Username:". $username."\n";
     $sMessage .= "Lastname:". $lastname."\n";
     $sMessage .= "Room:". $room."\n";
