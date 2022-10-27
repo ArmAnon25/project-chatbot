@@ -211,6 +211,7 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center">Lastname</td>
             <td class="text-center">Phonnumber</td>
             <td class="text-center">Date</td>
+            <td class="text-center">Parcelnumber</td>
             <td class="text-center">Picture</td>
             <td class="text-center">Edit</td>
             <td class="text-center">Delete</td>
@@ -228,6 +229,7 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["lastnameS"]; ?></td>
             <td class="text-center"><?php echo $row["pn"]; ?></td>
             <td class="text-center"><?php echo $row["dates"]; ?></td>
+            <td class="text-center"><?php echo $row["numsup"]; ?></td>
             <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
             <td><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
             <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
@@ -282,6 +284,9 @@ if (!isset($_SESSION['usernameA'])) {
 
               <label ><b>Arrival date</b></label>
               <input class="fromStock" type="date" name="dates" value="" />
+
+              <label ><b>Parcelnumber</b></label>
+              <input class="fromStock" type="text" placeholder="Parcelnumber" name="numsup"  required>
 
               <label ><b>Image Upload</b></label>
               <input class="fromStock" type="file"  name="pic" id="image" />

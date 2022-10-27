@@ -134,6 +134,11 @@ if (!isset($_SESSION['usernameA'])) {
 			<div class="form-group">
 				<label class="fw-bold ">Date the parcel arrived</label><br>
 				<input type="date" name="dates" class="fromStock"  value ="<?php echo $row["dates"]; ?>">
+
+        <div class="form-group">
+            <label class="fw-bold ">Parcelnumber</label>
+				<input type="text" placeholder="Enter your Parcelnumber"  class="fromStock" name="numsup"  value="<?php echo $row["numsup"]; ?>">
+			</div>
              </div>
 
             <div class="form-group">

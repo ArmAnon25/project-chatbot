@@ -1,27 +1,32 @@
 <?php
-   if(isset($_POST['send'])){
+session_start();
+   if(isset($_POST['sendmail'])){
 
 
-        $username = $_POST['username'];
-        $lastname = $_POST['lastname'];
+        $username =addslashes($_POST['username']) ;
+        $lastname = addslashes($_POST['lastname']);
         $email = $_POST['email'];
-        $room = $_POST['room'];
-        $detail = $_POST['detail'];
+        $room = addslashes($_POST['room']);
+        $detail =addslashes ($_POST['detail']);
 
-        $to = "anon.peteang@gmail.com";
+        $to = "anon@domaintestdeveloper.com";
+        
+        $message = $detail;
 
         $header = "From : ". $email ."\r\n";
         $header .= "MINE-Version: 1.0 \r\n";
         $header .= "Content-type: text/html\r\n";
 
-        $retval = mail($to,$room , $header );
-
+        $retval = mail($to ,$room, $message, $header );
+        
         if($retval){
 
-            echo "Send email Successfully";
+            $_SESSION['success'] = "ส่งข้อมูลสำเร็จ";
+            header("Location: formReport.php");
         }else{
-
-            echo "Error !!!Send email Successfully";
+    
+            $_SESSION['error'] = "ส่งข้อมูลไม่สำเร็จ";
+            header("Location: formReport.php");
         }
 
         

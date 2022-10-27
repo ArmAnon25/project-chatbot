@@ -82,7 +82,7 @@ session_start();
 
 					<div class="form-row">
 						<div class="col-lg-7">
-								<button type="submit" name="submit" class = "btn btn-info" >Submit</button>
+								<button type="submit" name="sendmail" class = "btn btn-info" >Submit</button>
 						</div>
 					</div>
 

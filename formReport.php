@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,55 +15,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="home_log_reg.css">
-    <title>Appeal page</title>
+    <title>Report problem page</title>
    
 </head>
 <body>
-    
+   
+
     <div class="container-form">
 		<div class="row">
 		    
 
 			<div class="col-lg-6 lg-2 px-5 pt-5">
 		        <form action="codeformReport.php" method="POST" class="login-email_user">
-                    
+                    <?php if(isset($_SESSION['success'])) {?>
+
+                            <div class="alert alert-success" role="alert">
+                               <?php 
+
+                                    echo $_SESSION['success'];
+                                    unset ($_SESSION['success']);
+                               ?>
+                            </div>
+                    <?php }?>
+                     <?php if(isset($_SESSION['error'])) {?>
+
+                            <div class="alert alert-error" role="alert">
+                               <?php 
+
+                                    echo $_SESSION['error'];
+                                    unset ($_SESSION['error']);
+                               ?>
+                            </div>
+                    <?php }?>
                     <h1 class="font-weight-bold py-2" style="font-weight: 600;">KP Resident</h1>
-					<p class="login-text" style="font-size: 2rem; font-weight: 400;">Report Dormitory</p>
+					<p class="login-text" style="font-size: 2rem; font-weight: 400;">Report </p>
+					
+            
 
 					<div class="form-row">
 						<div class="col-lg-7">
-							<input type="text"  class = "form-control my-4 p-2"  placeholder="Username" name="username" require>
+							<input type="text"  class = "form-control my-4 p-2"  placeholder="Username" name="username" required>
 						</div>
 					</div>
 
                     <div class="form-row">
 						<div class="col-lg-7">
-							<input type="text" class = "form-control my-4 p-2"  placeholder="Lastname" name="lastname" require>
+							<input type="text" class = "form-control my-4 p-2"  placeholder="Lastname" name="lastname"required >
+						</div>
+					</div>
+
+
+					<div class="form-row">
+						<div class="col-lg-7">
+							<input type="email" class = "form-control my-4 p-2"  placeholder="email" name="email"required >
 						</div>
 					</div>
 
                     <div class="form-row">
 						<div class="col-lg-7">
-							<input type="email" class = "form-control my-4 p-2"  placeholder="Email" name="email" require>
+							<input type="text" class = "form-control my-4 p-2"  placeholder="Room" name="room" required>
 						</div>
 					</div>
 
                     <div class="form-row">
 						<div class="col-lg-7">
-							<input type="text" class = "form-control my-4 p-2"  placeholder="Room" name="room" require>
-						</div>
-					</div>
-
-                    <div class="form-row">
-						<div class="col-lg-7">
-                        <textarea type="text"  name="detail"  class = "form-control my-4 p-2"  placeholder="Detail" require></textarea>
+                        <textarea type="text"  name="detail"  class = "form-control my-4 p-2"  placeholder="Detail"required ></textarea>
 					</div>
 
 					<div class="form-row">
 						<div class="col-lg-7">
-								<button type="submit" name="send" class = "btn btn-info" >Send</button>
+								<input type="submit" name="sendmail" class = "btn btn-info" >Submit</input>
 						</div>
 					</div>
 
