@@ -223,7 +223,15 @@ if (!isset($_SESSION['usernameA'])) {
     <?php if ($count > 0) { ?>
   
      <form action="deleteallP.php" method="POST">
-      <button type="submit" name="delete_multiple_btn" class="btn btn-danger">Delete</button>
+      <div class="col-12 row">
+          <div class="col-10">
+            <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">Add parcel</a>
+          </div>
+          <div class="col-2">
+            <button type="submit" name="delete_multiple_btn" style="width: 100%;"  class="btn btn-danger">Delete all</button>
+          </div>
+      </div>
+
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
@@ -254,7 +262,7 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["pn"]; ?></td>
             <td class="text-center"><?php echo $row["dates"]; ?></td>
             <td class="text-center"><?php echo $row["numsup"]; ?></td>
-            <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width=20%"></td>
+            <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="20%"></td>
             <td class="text-center"><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
             <td class="text-center"><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
           </tr>
@@ -271,8 +279,7 @@ if (!isset($_SESSION['usernameA'])) {
         </div>
     <?php } ?>
     
-    <br>
-    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">Add parcel</a>
+    
 </div>
     
 

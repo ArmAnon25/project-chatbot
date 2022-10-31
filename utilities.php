@@ -219,7 +219,14 @@ if (!isset($_SESSION['usernameA'])) {
     </form>
     <?php if ($count > 0) { ?>
       <form action="deleteallU.php" method="POST">
-      <button type="submit" name="delete_multiple_btn" class="btn btn-danger">Delete</button>
+      <div class="col-12 row">
+          <div class="col-10">
+            <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'">Add Utilities</a>
+            </div>
+          <div class="col-2">
+            <button type="submit" style="width: 100%;" name="delete_multiple_btn" class="btn btn-danger">Delete all</button>
+        </div>
+      </div>
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
@@ -265,8 +272,8 @@ if (!isset($_SESSION['usernameA'])) {
 <b>No information !!!!</b>
 </div>
 <?php } ?>
-    <br>
-    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'">Add Utilities</a>
+    
+    
     
     </div>
 
