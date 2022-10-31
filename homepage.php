@@ -175,6 +175,38 @@
         </div>
       </section>
 
+ <!-- info  -->
+
+      <section id="info" class="portfolio section-padding">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="section-header text-center pb-3">
+                <h2>Info</h2>
+            </div>
+          </div>
+
+          <div class="row">
+
+              <div class="col-12">
+
+                <div class="p-3 border bg-dark text-light" style="width: 100%; height: 44%;">
+                  <!-- <span class=" float-start">Posted By : </span>
+                  <span class=" float-end">Date : </span> -->
+                </div>
+
+                <div class="card-body border shadow" style="width: 100%; height: 70%;">
+                          <p class="card-text"></p>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+
+
       <!-- Services section -->
 
       <section id="facilities" class="services section-padding">
@@ -183,7 +215,6 @@
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
                 <h2>FACILITIES</h2>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Quibusdam, possimus.</p> -->
               </div>
             </div>
           </div>
