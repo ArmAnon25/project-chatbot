@@ -143,6 +143,9 @@ if (!isset($_SESSION['username'])) {
       </div>
       
       <!-- about section -->
+    <?php
+      require 'detailGreenDB.php';
+    ?>
       <section id="domitory" class="about-section-padding">
         <div class="container">
           <div class="row pb-5">
@@ -154,11 +157,13 @@ if (!isset($_SESSION['username'])) {
             <div class="col-lg-8 col-m-12 col-12 ps-lg-5 mt-md-5 center-text">
               <div class="about-text">
                 <h2>GREEN BUILDING</h2>
-                <p>ทำเลหลักหมื่น ห้องหลักพันต้น หน้าหอมี 7-11 ติดร้านเฝอลุงโฮ
-                  ติดถนนใหญ่ไม่ต้องเข้าซอย<br>ห้องลมเย็น บรรยากาศหน้าพักผ่อน
-                  ที่สำคัญคือ เลี้ยงน้องหมา น้องแมวได้
-                  <br>- ราคาเริ่มต้นเพียง 3,500 บาท
-                  </p>
+    <?php
+      $sql="SELECT * FROM detail_dormitory_g ORDER BY id_g DESC";
+      $result=$conn->query($sql);
+      while($row=$result->fetch_assoc()){
+    ?>
+                <p><?= $row['detail_g']?></p>
+    <?php } ?>
                 <a href="indexGreenDor.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
@@ -173,10 +178,13 @@ if (!isset($_SESSION['username'])) {
             <div class="col-lg-8 col-m-12 col-12 ps-lg-5 mt-md-5 order-lg-1 center-text">
               <div class="about-text">
                 <h2>ORANGE BUILDING</h2>
-                <p>ห้องใหม่ สะอาดกว้างขวาง ลมดี บรรยากาศดี ติดถนนใหญ่ 
-                  ตรงข้าม ม. เดินทางสะดวก<br> หน้าหอมี 7-11 ติดร้านเฝอลุงโฮ คีย์การ์ดเข้าออกทั้งภายนอกอาคารและในอาคาร
-                  <br>- ราคาเริ่มต้นเพียง 4,000 บาท
-                </p>
+      <?php
+        $sql="SELECT * FROM detail_dormitory_o ORDER BY id_o DESC";
+        $result=$conn->query($sql);
+        while($row=$result->fetch_assoc()){
+      ?>
+                <p><?= $row['detail_o']?></p>
+      <?php } ?>
                 <a href="indexOrangeDor.php" class="btn btn-info">Learn More</a>
               </div>
             </div>
