@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 					VALUES ('$username', '$email', '$password' , '$frs' , '$last' , '$phone' , '$room')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
-				echo "<script>alert('Wow! User Registration Completed.')</script>";
+				
 				$username = "";
 				$email = "";
 				$frs = "";
@@ -44,6 +44,7 @@ if (isset($_POST['submit'])) {
 				$_POST['pass'] = "";
 				$_POST['cpassword'] = "";
 				header("Location: loginUser.php");
+				echo "<script>alert('Wow! User Registration Completed.')</script>";
 			} else {
 				echo "<script>alert('Woops! Something Wrong Went.')</script>";
 			}

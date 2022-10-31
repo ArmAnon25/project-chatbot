@@ -10,13 +10,14 @@ $lastnameS = $_POST["lastnameS"];
 $pn = $_POST["pn"];
 $rm = $_POST["rm"];
 $dates = $_POST["dates"];
+$numsup = $_POST["numsup"];
 $image	= $_FILES['pic'];
 $imageinfo = pathinfo($image['name']);
 $f_name	= $image['name'];
 
 
 $sql = "UPDATE supplies SET usernameS ='$usernameS', lastnameS ='$lastnameS', 
-pn='$pn',rm='$rm', dates='$dates', pic='$f_name' WHERE id=$id; ";
+pn='$pn',rm='$rm', dates='$dates',numsup='$numsup', pic='$f_name' WHERE id=$id; ";
 
 $query = mysqli_query($conn, $sql);
 

@@ -438,8 +438,8 @@
       <footer class="bg-dark p-4 ">
         <div class="container">
           <dl class="row">
-              <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 097-2844-555 / 087-999-38-39</dd>
-              <dd class="bi bi-line text-white col-sm-6 text-start"> Line | bonusthai</dd>
+              <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 080-4522-500 / 087-999-38-39</dd>
+              <dd class="bi bi-line text-white col-sm-6 text-start"> Line | @138adlwg</dd>
               <dd class="bi bi-facebook text-white col-sm-6 text-start"> Facebook | KP Resident - ม.เกษตรฯ กําเเพงเเสน</dd>
               <dd class="bi bi-house-fill  text-white col-sm-6 text-start"> Address | 5/1 ม.2 ตําบล กําเเพงเเสน อําเภอ กําเเพงเเสน จังหวัด นครปฐม 73140</dd>
           </dl>

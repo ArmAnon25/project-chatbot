@@ -142,7 +142,7 @@ if (isset($_POST['submitA'])) {
                     <h1 class="font-weight-bold py-2" style="font-weight: 600;">KP Resident</h1>
 					<p class="login-text" style="font-size: 2rem; font-weight: 400;">Login to your account Admin </p>
 					
-                    <div class="form-row">
+            <div class="form-row">
 						<div class="col-lg-7">
 					<input class = "form-control my-4 p-2" type="username" placeholder="username" name="usernameA" value="<?php echo $usernameA; ?>" required>
 						</div>

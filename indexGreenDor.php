@@ -230,16 +230,15 @@ if (!isset($_SESSION['username'])) {
 
 <!-- footer -->
 <footer class="bg-dark p-4 ">
-	<div class="container">
-	  <dl class="row">
-		<!-- <p class="text-white text-center fw-nomal">KP RESIDENT DORMITORY</p>          -->
-		  <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 097-2844-555 / 087-999-38-39</dd>
-		  <dd class="bi bi-line text-white col-sm-6 text-start"> Line | bonusthai</dd>
-		  <dd class="bi bi-facebook text-white col-sm-6 text-start"> Facebook | KP Resident - ม.เกษตรฯ กําเเพงเเสน</dd>
-		  <dd class="bi bi-house-fill  text-white col-sm-6 text-start"> Address | 5/1 ม.2 ตําบล กําเเพงเเสน อําเภอ กําเเพงเเสน จังหวัด นครปฐม 73140</dd>
-	  </dl>
-	</div>
-  </footer>
+        <div class="container">
+          <dl class="row">
+              <dd class="bi bi-telephone-fill text-white col-sm-6 text-start"> Tel | 080-4522-500 / 087-999-38-39</dd>
+              <dd class="bi bi-line text-white col-sm-6 text-start"> Line | @138adlwg</dd>
+              <dd class="bi bi-facebook text-white col-sm-6 text-start"> Facebook | KP Resident - ม.เกษตรฯ กําเเพงเเสน</dd>
+              <dd class="bi bi-house-fill  text-white col-sm-6 text-start"> Address | 5/1 ม.2 ตําบล กําเเพงเเสน อําเภอ กําเเพงเเสน จังหวัด นครปฐม 73140</dd>
+          </dl>
+        </div>
+      </footer>
 	<!-- photo animation -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
