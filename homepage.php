@@ -176,31 +176,37 @@
       </section>
 
  <!-- info  -->
-
+ <?php
+    require 'informationDB.php';
+    ?>
       <section id="info" class="portfolio section-padding">
         <div class="container">
         <div class="row">
             <div class="col-md-12">
               <div class="section-header text-center pb-3">
-                <h2>Info</h2>
+                <h2>INFORMATION</h2>
             </div>
           </div>
-
-          <div class="row">
-
-              <div class="col-12">
-
-                <div class="p-3 border bg-dark text-light" style="width: 100%; height: 44%;">
-                  <!-- <span class=" float-start">Posted By : </span>
-                  <span class=" float-end">Date : </span> -->
-                </div>
-
-                <div class="card-body border shadow" style="width: 100%; height: 70%;">
-                          <p class="card-text"></p>
-                </div>
-
-              </div>
+        </div>
+    
+        <div class="col-12">
+          <!-- <div class="card" >
+            <div class="card-header">
+          </div> -->
+<?php
+      $sql="SELECT * FROM info_table ORDER BY id_i DESC";
+      $result=$conn->query($sql);
+      while($row=$result->fetch_assoc()){
+    ?>
+            <div class="card-header">
+              <blockquote class="blockquote mb-0">
+              <p style="font-size: 18px;"><?= $row['info_i']?></p>
+                <footer class="blockquote-footer" style="font-size: 16px;">Date <?= $row['cur_date_i']?></footer>
+              </blockquote>
             </div>
+               <?php } ?> 
+            </div>
+          </div>   
         </div>
       </section>
 
