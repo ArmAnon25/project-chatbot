@@ -120,7 +120,42 @@ if (!isset($_SESSION['usernameA'])) {
 				<input type="varchar" placeholder=" Enter your Lastname"  class="fromStock"name="lastnameU" value="<?php echo $row["lastnameU"]; ?>">
             </div>
 
-			<div class="form-group">
+      <div class="form-group">
+			<label class="fw-bold">Month</label>
+				<select type="integer" placeholder=" Enter your Totalcost"  class="fromStock"name="monthb"  value="<?php echo $row["monthb"]; ?>">
+                      <option><?php echo $row["monthb"]; ?></option>
+                      <option>January/มกราคม</option>
+                      <option>February/กุมภาพันธ์</option>
+                      <option>March/มีนาคม</option>
+                      <option>April/เมษายน</option>
+                      <option>May/พฤษภาคม</option>
+                      <option>June/มิถุนายน</option>
+                      <option>July/กรกฎาคม</option>
+                      <option>August/สิงหาคม</option>
+                      <option>September/กันยายน</option>
+                      <option>October/ตุลาคม</option>
+                      <option>November/พฤศจิกายน</option>
+                      <option>December/ธันวาคม</option>
+            </select>
+			</div>
+
+      <div class="form-group">
+			<label class="fw-bold">Electric bill</label>
+				<input type="integer" placeholder=" Enter your Electric bill"  class="fromStock"name="elecb"  value="<?php echo $row["elecb"]; ?>">
+			</div>
+
+      <div class="form-group">
+			<label class="fw-bold">Water bill</label>
+				<input type="integer" placeholder=" Enter your Water bill"  class="fromStock"name="waterb"  value="<?php echo $row["waterb"]; ?>">
+			</div>
+
+
+      <div class="form-group">
+			<label class="fw-bold">Room bill</label>
+				<input type="integer" placeholder=" Enter your Room bill"  class="fromStock"name="roomb"  value="<?php echo $row["roomb"]; ?>">
+			</div>
+
+      <div class="form-group">
 			<label class="fw-bold">Total Cost</label>
 				<input type="integer" placeholder=" Enter your Totalcost"  class="fromStock"name="cost"  value="<?php echo $row["cost"]; ?>">
 			</div>

@@ -8,13 +8,18 @@ $usernameU = $_POST["usernameU"];
 $lastnameU = $_POST["lastnameU"];
 $cost = $_POST["cost"];
 $rn = $_POST["rn"];
+$dateu = $_POST['dateu'];
+$monthb = $_POST['monthb'];
+$elecb = $_POST['elecb'];
+$waterb = $_POST['waterb'];
+$roomb = $_POST['roomb'];
 $image	= $_FILES['picU'];
 $imageinfo = pathinfo($image['name']);
 $f_name	= $image['name'];
 
 
 $sql = "UPDATE add_util SET usernameU ='$usernameU', lastnameU ='$lastnameU', 
-cost='$cost',rn='$rn', picU='$f_name' WHERE id=$id; ";
+cost='$cost',rn='$rn',dateu='$dateu',monthb='$monthb',elecb='$elecb',waterb='$waterb',roomb='$roomb', picU='$f_name' WHERE id=$id; ";
 
 $result = mysqli_query($conn, $sql);
 

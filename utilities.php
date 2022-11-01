@@ -240,6 +240,10 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center">Room</td>
             <td class="text-center">Firstname</td>
             <td class="text-center">Lastname</td>
+            <td class="text-center">Month</td>
+            <td class="text-center">Electric bill</td>
+            <td class="text-center">Water bill</td>
+            <td class="text-center">Room bill</td>
             <td class="text-center">Payment start date</td>
             <td class="text-center">Total Cost</td>
             <td class="text-center">Picture</td>
@@ -259,6 +263,10 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["rn"]; ?></td>
             <td class="text-center"><?php echo $row["usernameU"]; ?></td>
             <td class="text-center"><?php echo $row["lastnameU"]; ?></td>
+            <td class="text-center"><?php echo $row["monthb"];?></td>
+            <td class="text-center"><?php echo $row["elecb"];?></td>
+            <td class="text-center"><?php echo $row["waterb"];?></td>
+            <td class="text-center"><?php echo $row["roomb"];?></td>
             <td class="text-center"><?php echo $row["dateu"]; ?></td>
             <td class="text-center"><?php echo $row["cost"]; ?></td>
             <td class= "text-center"> <img src = "img/<?php echo $row['picU'];?>" width="30%"> </td>
@@ -300,6 +308,32 @@ if (!isset($_SESSION['usernameA'])) {
 
             <label ><b>Last name</b></label>
             <input class="fromStock" type="varchar" placeholder=" Enter your Lastname" name="lastnameU"  required>
+
+            <label ><b>Month</b></label>
+            <select class="fromStock" type="interger" placeholder=" Enter your Month" name="monthb" required>
+                      <option>Choose Month</option>
+                      <option>January/มกราคม</option>
+                      <option>February/กุมภาพันธ์</option>
+                      <option>March/มีนาคม</option>
+                      <option>April/เมษายน</option>
+                      <option>May/พฤษภาคม</option>
+                      <option>June/มิถุนายน</option>
+                      <option>July/กรกฎาคม</option>
+                      <option>August/สิงหาคม</option>
+                      <option>September/กันยายน</option>
+                      <option>October/ตุลาคม</option>
+                      <option>November/พฤศจิกายน</option>
+                      <option>December/ธันวาคม</option>
+            </select>
+
+            <label ><b>Electric bill</b></label>
+            <input class="fromStock" type="interger" placeholder=" Enter your Electric bill" name="elecb" required>
+
+            <label ><b>Water bill</b></label>
+            <input class="fromStock" type="interger" placeholder=" Enter your Water bill" name="waterb" required>
+
+            <label ><b>Room bill</b></label>
+            <input class="fromStock" type="interger" placeholder=" Enter your Room bill" name="roomb" required>
             
             <label ><b>Total cost</b></label>
             <input class="fromStock" type="interger" placeholder=" Enter your total cost" name="cost" required>
@@ -313,7 +347,7 @@ if (!isset($_SESSION['usernameA'])) {
             <label ><b>Image Upload</b></label>
             <input class="fromStock" type="file"  name="picU" id="image" />
             
-            <input type="submit" class="btnStock"  name="addU"  id="addU"  value="Add"></input>  
+            <input type="submit" class="btnStock"  name="addU"  id="addU"  value="Add">
             <input type="reset" value="Reset" class="btn btn-danger">
             
           </div>

@@ -225,11 +225,15 @@ session_start();
     <table class="table table-bordered">
     <thead class="table-dark">
         <tr>
-            <td class="text-center">Select<input type="checkbox" id="checkAll"></td>
+        <td class="text-center">Select<input type="checkbox" id="checkAll"></td>
             <td class="text-center">No.</td>
             <td class="text-center">Room</td>
             <td class="text-center">Firstname</td>
             <td class="text-center">Lastname</td>
+            <td class="text-center">Month</td>
+            <td class="text-center">Electric bill</td>
+            <td class="text-center">Water bill</td>
+            <td class="text-center">Room bill</td>
             <td class="text-center">Payment start date</td>
             <td class="text-center">Total Cost</td>
             <td class="text-center">Picture</td>
@@ -249,6 +253,10 @@ session_start();
             <td class="text-center"><?php echo $row["rn"]; ?></td>
             <td class="text-center"><?php echo $row["usernameU"]; ?></td>
             <td class="text-center"><?php echo $row["lastnameU"]; ?></td>
+            <td class="text-center"><?php echo $row["monthb"];?></td>
+            <td class="text-center"><?php echo $row["elecb"];?></td>
+            <td class="text-center"><?php echo $row["waterb"];?></td>
+            <td class="text-center"><?php echo $row["roomb"];?></td>
             <td class="text-center"><?php echo $row["dateu"]; ?></td>
             <td class="text-center"><?php echo $row["cost"]; ?></td>
             <td class="text-center"><img src = "img/<?php echo $row["picU"]; ?>"width="26%"></td>

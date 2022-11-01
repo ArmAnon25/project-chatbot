@@ -8,6 +8,10 @@ if($_POST) {
     $cost = $_POST['cost'];
 	$rn = $_POST['rn'];
 	$dateu = $_POST['dateu'];
+	$monthb = $_POST['monthb'];
+	$elecb = $_POST['elecb'];
+	$waterb = $_POST['waterb'];
+	$roomb = $_POST['roomb'];
 	$image		= $_FILES['picU'];
 	$imageinfo	= pathinfo($image['name']);
     $f_name		= $image['name'];
@@ -26,8 +30,8 @@ if($_POST) {
 	}
 		
 	
-		$sql = "insert into add_util (usernameU, lastnameU, cost,rn,dateu, picU)
-		VALUES ('$usernameU', '$lastnameU', '$cost', '$rn','$dateu','$f_name')";
+		$sql = "insert into add_util (usernameU, lastnameU, cost,rn,dateu,monthb,elecb,waterb,roomb, picU)
+		VALUES ('$usernameU', '$lastnameU', '$cost', '$rn','$dateu','$monthb','$elecb','$waterb','$roomb','$f_name')";
 		echo "vy ";
 		mysqli_query($conn,$sql) or die("error=$sql"); 
 
