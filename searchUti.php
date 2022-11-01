@@ -20,6 +20,22 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home_log_reg.css">
+    <!-- checkbox all -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#checkAll").click(function(){
+          if($(this).is(":checked")){
+
+            $(".checkItem").prop('checked',true);
+          }
+            else{
+              $(".checkItem").prop('checked',false);
+            }
+        })
+
+      })
+    </script>
     <title>Search Utilities</title>
     
     <style>
@@ -182,8 +198,9 @@ session_start();
       </nav>
 
     <div class="container">
-    <h1 class="text-center mt-3 p-3">-</h1>
-    <h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">Utility information found </h1>
+    <h1 class="text-center mt-3 p-3"> </h1>
+    <br>
+    <h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Utility</h1>
     <form action="searchUti.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
@@ -196,13 +213,24 @@ session_start();
 
     </form>
     <?php if ($count > 0) { ?>
+      <form action="deleteallU.php" method="POST">
+      <div class="col-12 row" style = "margin: 0; ">
+          <div class="col-10">
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id05').style.display='block'"> Add Utilities</a>
+            </div>
+          <div class="col-2">
+            <button type="submit" style="width: 100%;" name="delete_multiple_btn" class="btn btn-danger">Delete all</button>
+        </div>
+      </div>
     <table class="table table-bordered">
     <thead class="table-dark">
         <tr>
-            <td class="text-center">No</td>
+            <td class="text-center">Select<input type="checkbox" id="checkAll"></td>
+            <td class="text-center">No.</td>
             <td class="text-center">Room</td>
             <td class="text-center">Firstname</td>
             <td class="text-center">Lastname</td>
+            <td class="text-center">Payment start date</td>
             <td class="text-center">Total Cost</td>
             <td class="text-center">Picture</td>
             <td class="text-center">Edit</td>
@@ -216,30 +244,35 @@ session_start();
 <?php while ($row = mysqli_fetch_assoc($query)){?>
 
     <tr>
+    <td class="text-center"> <input type="checkbox" name="_delete_id[]" value="<?= $row['id']; ?>"class="checkItem"></td>
             <td class="text-center"><?php echo $order++;?></td>
             <td class="text-center"><?php echo $row["rn"]; ?></td>
             <td class="text-center"><?php echo $row["usernameU"]; ?></td>
             <td class="text-center"><?php echo $row["lastnameU"]; ?></td>
-             <td class="text-center"><?php echo $row["cost"]; ?></td>
+            <td class="text-center"><?php echo $row["dateu"]; ?></td>
+            <td class="text-center"><?php echo $row["cost"]; ?></td>
             <td class="text-center"><img src = "img/<?php echo $row["picU"]; ?>"width="26%"></td>
-            <td><a href="editUti.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
-            <td><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
+            <td class="text-center"><a href="editUti.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
+            <td class="text-center"><a href="deleteutil.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
      </tr>
     <br>
 <?php } ?>
    
 </tbody>
     </table>
+    </form>
     <?php } else {?>
 
-        <div class="alert alert-danger">
-        <b>Search data not found!!!!</b>
-        </div>
+      <div class="col-12 row">
+          <div class="col-12">
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id05').style.display='block'">  Add Utilities</a>
+          </div>
+          <div class="col-12 alert text-center text-danger text-decoration-underline m-1 p-5 fs-5 fw-normal">
+            <b>No information !</b>
+          </div>
     <?php } ?>
 
-    <br>
-    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id05').style.display='block'">Add parcel</a>
-    
+   
     </div>
    <!-- Popup Add -->
   <?php

@@ -26,7 +26,23 @@ if (!isset($_SESSION['usernameA'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home_log_reg.css">
-    <title>List Package</title>
+    <!-- checkbox -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#checkAll").click(function(){
+          if($(this).is(":checked")){
+
+            $(".checkItem").prop('checked',true);
+          }
+            else{
+              $(".checkItem").prop('checked',false);
+            }
+        })
+
+      })
+    </script>
+    <title>List Parcel</title>
    
     <style>
       * {
@@ -188,8 +204,9 @@ if (!isset($_SESSION['usernameA'])) {
       </nav>
 
 <div class="container">
-<h1 class="text-center mt-3 p-3">-</h1>
-<h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Package found </h1>
+<h1 class="text-center mt-3 p-3"> </h1>
+<br>
+<h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Parcel </h1>
     <form action="searchStock.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
@@ -202,9 +219,20 @@ if (!isset($_SESSION['usernameA'])) {
 
     </form>
     <?php if ($count > 0) { ?>
+      <form action="deleteallP.php" method="POST">
+      <div class="col-12 row"  style = "margin: 0; ">
+          <div class="col-10">
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id04').style.display='block'"> Add parcel</a>
+          </div>
+          <div class="col-2">
+            <button type="submit" name="delete_multiple_btn" style="width: 100%;"  class="btn btn-danger">Delete all</button>
+          </div>
+      </div>
+      <br>
     <table class="table table-bordered">
-    <thead class="table-dark">
+    <thead class="table-dark text-center">
         <tr>
+            <td>Select <input type="checkbox" id="checkAll"></td>
             <td class="text-center">No.</td>
             <td class="text-center">Room</td>
             <td class="text-center">Firstname</td>
@@ -223,6 +251,7 @@ if (!isset($_SESSION['usernameA'])) {
 <?php while ($row = mysqli_fetch_assoc($query)) {?>
 
         <tr>
+        <td class="text-center"> <input type="checkbox" name="_delete_id[]" value="<?= $row['id']; ?>" class="checkItem"></td>
             <td class="text-center"><?php echo $order++;?></td>
             <td class="text-center"><?php echo $row["rm"]; ?></td>
             <td class="text-center"><?php echo $row["usernameS"]; ?></td>
@@ -231,13 +260,14 @@ if (!isset($_SESSION['usernameA'])) {
             <td class="text-center"><?php echo $row["dates"]; ?></td>
             <td class="text-center"><?php echo $row["numsup"]; ?></td>
             <td class="text-center"><img src = "img/<?php echo $row["pic"]; ?>"width="26%"></td>
-            <td><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-success" >Edit</a></td>
+            <td><a href="editStock.php?id=<?php echo $row["id"] ?>" class="btn btn-info" >Edit</a></td>
             <td><a href="deletestock.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" onclick="return confirm('Confirm data delete?')">Delete</a></td>
           </tr>
         <?php } ?>
    
       </tbody>
     </table>
+    </form>
     <?php } else {?>
 
         <div class="alert alert-danger">
@@ -245,8 +275,6 @@ if (!isset($_SESSION['usernameA'])) {
         </div>
     <?php } ?>
     
-    <br>
-    <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id04').style.display='block'">Add parcel</a>
     
 </div>
     

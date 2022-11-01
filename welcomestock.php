@@ -207,8 +207,9 @@ if (!isset($_SESSION['usernameA'])) {
 
   <!-- Table stock -->
 <div class="container">
-<h1 class="text-center mt-3 p-3">-</h1>
-<h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Package All</h1>
+<h1 class="text-center mt-3 p-3"> </h1>
+<br>
+<h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Parcel</h1>
     <form action="searchStock.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
@@ -220,32 +221,34 @@ if (!isset($_SESSION['usernameA'])) {
       </div>
 
     </form>
-    <?php if ($count > 0) { ?>
-  
+    
+    
+
+      <?php if ($count > 0) { ?>
      <form action="deleteallP.php" method="POST">
-      <div class="col-12 row">
+      <div class="col-12 row"  style = "margin: 0; ">
           <div class="col-10">
-            <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">Add parcel</a>
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'"> Add parcel</a>
           </div>
           <div class="col-2">
             <button type="submit" name="delete_multiple_btn" style="width: 100%;"  class="btn btn-danger">Delete all</button>
           </div>
       </div>
-
+      
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
             <td>Select <input type="checkbox" id="checkAll"></td>
-            <td>No.</td>
-            <td>Room</td>
-            <td>Firstname</td>
-            <td>Lastname</td>
-            <td>Phonnumber</td>
-            <td>Date</td>
-            <td>Parcelnumber</td>
-            <td>Picture</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td class="text-center">No.</td>
+            <td class="text-center">Room</td>
+            <td class="text-center">Firstname</td>
+            <td class="text-center">Lastname</td>
+            <td class="text-center">Phonnumber</td>
+            <td class="text-center">Date</td>
+            <td class="text-center">Parcelnumber</td>
+            <td class="text-center">Picture</td>
+            <td class="text-center">Edit</td>
+            <td class="text-center">Delete</td>
         </tr>
     </thead>
     
@@ -273,10 +276,18 @@ if (!isset($_SESSION['usernameA'])) {
     </table>
      </form>
     <?php } else {?>
-
-        <div class="alert alert-danger">
-        <b>No information !!!!</b>
-        </div>
+        
+        <div class="col-12 row">
+          <div class="col-12">
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id02').style.display='block'">  Add parcel</a>
+          </div>
+          <div class="col-12 alert text-center text-danger text-decoration-underline m-1 p-5 fs-5 fw-normal">
+            <b>No information !</b>
+          </div>
+          <!-- <div class="col-2">
+            <button type="submit" name="delete_multiple_btn" style="width: 100%;"  class="btn btn-danger">Delete all</button>
+          </div> -->
+      </div>
     <?php } ?>
     
     

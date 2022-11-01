@@ -203,9 +203,11 @@ if (!isset($_SESSION['usernameA'])) {
         </div>
       </nav>
 
+      <!-- Table Utilities -->
     <div class="container">
-    <h1 class="text-center mt-3 p-3">-</h1>
-    <h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">Utility information All</h1>
+    <h1 class="text-center mt-3 p-3"> </h1>
+    <br>
+    <h1 class="text-left mt-3 font-weight-bold " style="font: weight 600;">List Utility</h1>
     <form action="searchUti.php" class="form-group my-3" method="POST">
       <div class="row">
         <div class="col-6">
@@ -217,11 +219,14 @@ if (!isset($_SESSION['usernameA'])) {
       </div>
 
     </form>
+    
+    
+      
     <?php if ($count > 0) { ?>
       <form action="deleteallU.php" method="POST">
-      <div class="col-12 row">
+      <div class="col-12 row" style = "margin: 0; ">
           <div class="col-10">
-            <a class="btn btn-success" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'">Add Utilities</a>
+            <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'"> Add Utilities</a>
             </div>
           <div class="col-2">
             <button type="submit" style="width: 100%;" name="delete_multiple_btn" class="btn btn-danger">Delete all</button>
@@ -230,16 +235,16 @@ if (!isset($_SESSION['usernameA'])) {
     <table class="table table-bordered">
     <thead class="table-dark text-center">
         <tr>
-            <td>Select<input type="checkbox" id="checkAll"></td>
-            <td>No.</td>
-            <td>Room</td>
-            <td>Firstname</td>
-            <td>Lastname</td>
-            <td>Payment start date</td>
-            <td>Total Cost</td>
-            <td>Picture</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td class="text-center">Select<input type="checkbox" id="checkAll"></td>
+            <td class="text-center">No.</td>
+            <td class="text-center">Room</td>
+            <td class="text-center">Firstname</td>
+            <td class="text-center">Lastname</td>
+            <td class="text-center">Payment start date</td>
+            <td class="text-center">Total Cost</td>
+            <td class="text-center">Picture</td>
+            <td class="text-center">Edit</td>
+            <td class="text-center">Delete</td>
            
         </tr>
     </thead>
@@ -267,10 +272,14 @@ if (!isset($_SESSION['usernameA'])) {
     </table>
       </form>
     <?php } else {?>
-
-<div class="alert alert-danger">
-<b>No information !!!!</b>
-</div>
+      <div class="col-12 row">
+        <div class="col-12">
+          <a class="btn btn-success bi bi-plus-circle" style="width: 100%;" onclick="document.getElementById('id06').style.display='block'"> Add Utilities</a>
+        </div>
+        <div class="col-12 alert text-center text-danger text-decoration-underline m-1 p-5 fs-5 fw-normal">
+          <b>No information !</b>
+        </div>
+      </div>
 <?php } ?>
     
     
